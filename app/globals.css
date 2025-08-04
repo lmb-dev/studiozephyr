@@ -1,26 +1,60 @@
 @import "tailwindcss";
 
+/* #region Defaults */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --white: #e0e0e0;
+  --lavender: #8b8bcc;
+  --light-purple: #29294d;
+  --dark-purple: #181838;
+
+  --allura: 'Allura', cursive;
+  
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.allura{
+  font-family: var(--allura);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  scroll-behavior: smooth;
+  cursor: none !important;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+body::-webkit-scrollbar{
+  display: none;
 }
+
+
+html, body {
+  background: url('https://www.transparenttextures.com/patterns/stardust.png'), linear-gradient(to bottom, var(--dark-purple), var(--light-purple));
+  background-attachment: fixed;
+  background-color: var(--dark-purple);
+  color: var(--white);
+  min-height: 100svh;
+  overflow-x: hidden;
+  
+}
+/* #endregion */
+
+
+/* #region Header Section */
+
+header{
+  text-align: center;
+  position: sticky;
+  top: 0px;
+  z-index: 40;
+}
+header h1{
+  font-size: clamp(32px, 5vw, 56px);
+  font-weight: bold;
+  letter-spacing: 0.25em;
+  color: var(--white);
+  text-shadow: 0 0 8px rgb(117, 117, 117);
+  backdrop-filter: blur(1px);
+  position: absolute;
+  width: 100%;
+  padding-top: 0.5rem ;  
+  left: 4px;
+}
+/* #endregion */
