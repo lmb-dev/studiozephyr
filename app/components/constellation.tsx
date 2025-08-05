@@ -3,9 +3,10 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 interface ResponsiveGridPosition {
-  desktop: {row: number; column: number};
-  mobileVertical: {row: number; column: number};
-  mobileHorizontal: {row: number; column: number};
+  desktopVertical: { row: number; column: number };
+  desktopHorizontal: { row: number; column: number };
+  mobileVertical: { row: number; column: number };
+  mobileHorizontal: { row: number; column: number };
 }
 
 interface ConstellationProps {
@@ -17,7 +18,7 @@ interface ConstellationProps {
 
 // Custom hook to detect screen size and orientation
 const useResponsiveGrid = () => {
-  const [screenType, setScreenType] = useState<'desktop' | 'mobileVertical' | 'mobileHorizontal'>('desktop');
+const [screenType, setScreenType] = useState<'desktopVertical' | 'desktopHorizontal' | 'mobileVertical' | 'mobileHorizontal'>('desktopHorizontal');
 
   useEffect(() => {
     const checkScreenType = () => {
@@ -25,14 +26,17 @@ const useResponsiveGrid = () => {
       const height = window.innerHeight;
       
       if (width <= 768) {
-        // Mobile device
         if (height > width) {
           setScreenType('mobileVertical');
         } else {
           setScreenType('mobileHorizontal');
         }
       } else {
-        setScreenType('desktop');
+        if (height > width) {
+          setScreenType('desktopVertical');
+        } else {
+          setScreenType('desktopHorizontal');
+        }
       }
     };
 

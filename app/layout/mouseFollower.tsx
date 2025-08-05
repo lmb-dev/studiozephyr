@@ -4,6 +4,7 @@ import { motion, useMotionValue } from 'framer-motion';
 
 export default function MouseFollower() {
   const [cursorState, setCursorState] = useState({ isPointer: false, edgeOpacity: 1 });
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
@@ -20,6 +21,8 @@ export default function MouseFollower() {
 
   
   useEffect(() => {
+    if ('ontouchstart' in window) {setIsTouchDevice(true); return}
+
     const moveHandler = (e: MouseEvent) => {
       mouseX.set(e.clientX);
       mouseY.set(e.clientY);
@@ -28,8 +31,9 @@ export default function MouseFollower() {
 
     window.addEventListener('mousemove', moveHandler);
 
-  }, [updatePointerState]);
+  }, [updatePointerState, mouseX, mouseY]);
 
+  if (isTouchDevice) return null;
   return (
     <motion.div
       style={{

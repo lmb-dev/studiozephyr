@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
-import { type Container, type ISourceOptions, MoveDirection, OutMode } from "@tsparticles/engine";
+import { type ISourceOptions, MoveDirection, OutMode } from "@tsparticles/engine";
 import { loadSlim } from "@tsparticles/slim";
 
 export default function StarBackground() {
@@ -38,7 +38,6 @@ export default function StarBackground() {
     });
   }, []);
 
-  const particlesLoaded = async (container?: Container): Promise<void> => {};
   // #endregion
 
   const options: ISourceOptions = useMemo(
@@ -54,7 +53,7 @@ export default function StarBackground() {
         },
       },
       particles: {
-        color: { value: ["#E5E5E5"] },
+        color: { value: ["#e0e0e0"] },
         move: {
           direction: MoveDirection.none,
           enable: true,
@@ -78,14 +77,14 @@ export default function StarBackground() {
         twinkle: {
           particles: {
             enable: true,
-            color: "#E5E5E5",
+            color: "#e0e0e0",
             frequency: 0.1,
             opacity: 1,
           },
         },
         shadow: {
           enable: true,
-          color: "#E5E5E5",
+          color: "#e0e0e0",
           blur: 20,
           offset: { x: 0, y: 0 },
         },
@@ -98,9 +97,8 @@ export default function StarBackground() {
   );
 
   return (
-    <div ref={particlesContainerRef} className="absolute inset-0 h-full -z-50">
-      {init && <Particles id="tsparticles" particlesLoaded={particlesLoaded} options={options} />}
-    
+    <div ref={particlesContainerRef} className="absolute inset-0 h-full z-0">
+      {init && <Particles id="tsparticles" options={options} />}
     </div>
   );
 }

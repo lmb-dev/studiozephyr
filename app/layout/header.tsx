@@ -8,7 +8,7 @@ export default function Header() {
   const isHome = usePathname() === '/'
 
   return (
-    <header>
+    <header className={`${isHome ? 'relative ' : 'sticky'} h-[10svh] pl-2`}>
       <style jsx global>{`
         .moon-text {
           position: absolute;
@@ -39,7 +39,7 @@ export default function Header() {
         <motion.div
           initial={false}
           animate={{
-            top: isHome ? '30vh' : '1vh',
+            top: isHome ? '25vh' : '0.5rem',
             height: isHome ? 'clamp(100px, 15vw, 200px)' : 'clamp(48px, 6vw, 72px)',
             width: isHome ? 'clamp(100px, 15vw, 200px)' : 'clamp(48px, 6vw, 72px)',
           }}
