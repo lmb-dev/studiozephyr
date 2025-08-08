@@ -52,7 +52,7 @@ export default function Header() {
         >
           <div className='absolute hover:scale-110 transition ease-in-out duration-300 w-full h-full'>
             <Image
-              src="/moon.png"
+              src="/moon.webp"
               alt="Moon Button"
               fill
               sizes='100%'

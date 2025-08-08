@@ -5,6 +5,7 @@ import "./globals.css";
 import Header from "./layout/header";
 import StarBackground from "./layout/starBackground";
 import MouseFollower from "./layout/mouseFollower";
+import Watermark from "./layout/watermark";
 
 
 const allura = Allura({
@@ -25,11 +26,16 @@ export const metadata: Metadata = {
 export default function RootLayout({children}: Readonly<{children: React.ReactNode}>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="preload" href="/moon.webp" as="image" />
+      </head>
+
       <body className={`${glory.className} ${allura.className} antialiased`}>
+        <Header/>
         <StarBackground/>        
         <MouseFollower/>
-        <Header/>
         <main>{children}</main>
+        <Watermark/>
       </body>
     </html>
   );

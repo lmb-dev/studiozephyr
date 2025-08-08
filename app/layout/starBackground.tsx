@@ -8,12 +8,14 @@ import { loadSlim } from "@tsparticles/slim";
 export default function StarBackground() {
 
   // #region Particle Count Scaler
+  const [isMobile, setIsMobile] = useState(false);
   const [particleCount, setParticleCount] = useState(600); 
   const particlesContainerRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
     const updateParticleCount = () => {
       const width = window.innerWidth;
+      setIsMobile(width <= 768);
       const scaledCount = Math.max(30, Math.min(600, Math.floor((width / 1920) * 600)));
       setParticleCount(scaledCount);
     };
@@ -98,7 +100,7 @@ export default function StarBackground() {
 
   return (
     <div ref={particlesContainerRef} className="absolute inset-0 h-full z-0">
-      {init && <Particles id="tsparticles" options={options} />}
+      {init && !isMobile && <Particles id="tsparticles" options={options} />}
     </div>
   );
 }

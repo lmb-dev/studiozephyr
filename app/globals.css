@@ -2,10 +2,10 @@
 
 /* #region Defaults */
 :root {
-  --white: #e0e0e0;
-  --lavender: #b8b8f0;
-  --light-purple: #1f1f3c;
-  --dark-purple: #0b0b1b;
+  --tx-primary: #e0e0e0;
+  --tx-secondary: #b8b8f0;
+  --bg-light: #1f1f3c;
+  --bg-dark: #0b0b1b;
 
   --allura: 'Allura', cursive;
   
@@ -26,15 +26,16 @@ body::-webkit-scrollbar{
 
 
 body {
-  background: url('https://www.transparenttextures.com/patterns/stardust.png'), linear-gradient(to bottom, var(--dark-purple), var(--light-purple));
+  background: url('https://www.transparenttextures.com/patterns/stardust.png'), linear-gradient(to bottom, var(--bg-dark), var(--bg-light));
   background-attachment: fixed;
-  background-color: var(--dark-purple);
-  color: var(--white);
+  background-color: var(--bg-dark);
+  color: var(--tx-primary);
+  min-height: 100svh;
 }
 /* #endregion */
 
 
-/* #region Header Section */
+/* #region Header and Hero Section */
 header{
   text-align: center;
   top: 0px;
@@ -44,7 +45,7 @@ header h1{
   font-size: clamp(32px, 5vw, 56px);
   font-weight: bold;
   letter-spacing: 0.25em;
-  text-shadow: 0 0 .2em var(--white);
+  text-shadow: 0 0 .2em var(--tx-primary);
   backdrop-filter: blur(1px);
   width: 100%;
   padding-top: 0.5rem;  

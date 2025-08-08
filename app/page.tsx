@@ -1,8 +1,7 @@
 'use client'
 import React from 'react';
 import Constellation from './components/constellation';
-import { FaGithub } from "react-icons/fa6";
-import Link from 'next/link';
+
 
 const NightSkyPage: React.FC = () => {
   return (
@@ -10,7 +9,7 @@ const NightSkyPage: React.FC = () => {
       {/* Global styles for constellation elements */}
       <style jsx global>{`
         .constellation {
-          transition: transform 0.3s ease;
+          transition: transform 0.3s ease-in-out;
           cursor: pointer;
         }
         .constellation:hover {
@@ -66,15 +65,7 @@ const NightSkyPage: React.FC = () => {
         />
       </section>
 
-      {/* Footer GitHub link */}
-      <Link
-        href="https://github.com/lmb-dev"
-        target="_blank"
-        className="absolute bottom-1 left-5 opacity-25 hover:opacity-100 flex text-sm gap-2 transition"
-      >
-        Site by lmb-dev
-        <FaGithub />
-      </Link>
+
     </div>
   );
 };
