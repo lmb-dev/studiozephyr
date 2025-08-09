@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ViewTransitions} from "next-view-transitions";
+import { unstable_ViewTransition as ViewTransition } from 'react'
 import { Give_You_Glory, Allura } from "next/font/google";
 import "./globals.css";
 
@@ -26,7 +26,6 @@ export const metadata: Metadata = {
 
 export default function RootLayout({children}: Readonly<{children: React.ReactNode}>) {
   return (
-    <ViewTransitions>
       <html lang="en">
         <head>
           <link rel="preload" href="/moon.webp" as="image" />
@@ -36,11 +35,12 @@ export default function RootLayout({children}: Readonly<{children: React.ReactNo
           <Header/>
           <StarBackground/>        
           <MouseFollower/>
-          <main style={{ viewTransitionName: "page" }}>{children}</main>
+          <ViewTransition name="page">
+            <main>{children}</main>
+          </ViewTransition>
           <Watermark/>
         </body>
       </html>
-    </ViewTransitions>
 
   );
 }

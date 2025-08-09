@@ -1,7 +1,7 @@
 'use client'
 import { usePathname } from 'next/navigation'
 import { motion } from 'framer-motion'
-import { Link } from "next-view-transitions";
+import Link from 'next/link'
 import Image from 'next/image'
 
 export default function Header() {
