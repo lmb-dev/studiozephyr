@@ -36,6 +36,7 @@ export default function MouseFollower() {
   if (isTouchDevice) return null;
   return (
     <motion.div
+      className='mouse-follower'
       style={{
         position: 'fixed',
         top: mouseY,
@@ -51,7 +52,7 @@ export default function MouseFollower() {
         width: cursorState.isPointer ? 16 : 8,
         height: cursorState.isPointer ? 16 : 8,
         rotate: cursorState.isPointer ? '225deg' : '45deg',
-        backgroundColor: cursorState.isPointer ? 'transparent' : 'white',
+        backgroundColor: cursorState.isPointer ? 'transparent' : '',
       }}
       transition={{
         duration: 0.25,

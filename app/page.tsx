@@ -6,29 +6,6 @@ import Constellation from './components/constellation';
 const NightSkyPage: React.FC = () => {
   return (
     <div className="flex flex-col relative">
-      {/* Global styles for constellation elements */}
-      <style jsx global>{`
-        .constellation {
-          transition: transform 0.3s ease-in-out;
-          cursor: pointer;
-        }
-        .constellation:hover {
-          transform: scale(1.1);
-        }
-        .constellation-star {
-          fill: white;
-        }
-        .constellation-line {
-          stroke: rgba(255, 255, 255, 0.7);
-          stroke-width: 1.5;
-        }
-        .constellation-label {
-          fill: #e0e0e0;
-          font-size: 14px;
-          text-anchor: middle;
-          font-weight: bold;
-        }
-      `}</style>
 
       {/* 12x12 Grid layout for constellations within full viewport height */}
       <section className="grid grid-cols-12 grid-rows-12 h-[90svh]">

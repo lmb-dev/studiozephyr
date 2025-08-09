@@ -1,7 +1,7 @@
 'use client'
 import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
-import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from "next-view-transitions";
+import { motion } from 'framer-motion';
 
 interface ResponsiveGridPosition {
   desktopVertical: { row: number; column: number };
@@ -46,11 +46,9 @@ const useResponsiveGrid = () => {
 
     // Add event listeners
     window.addEventListener('resize', checkScreenType);
-    window.addEventListener('orientationchange', () => {setTimeout(checkScreenType, 100)}); // Delay to allow orientation change to complete
 
     return () => {
       window.removeEventListener('resize', checkScreenType);
-      window.removeEventListener('orientationchange', checkScreenType);
     };
   }, []);
 
@@ -121,78 +119,37 @@ const Constellation: React.FC<ConstellationProps> = ({ label, href, external = f
   // Get current position based on screen type
   const currentPosition = gridPosition[screenType];
 
-  // Layout transition for position changes
-  const layoutTransition = {
-    type: "spring" as const,
-    stiffness: 300,
-    damping: 30,
-  };
-
-  // Main animation transition
-  const mainTransition = {
-    duration: 0.6,
-    ease: [0.25, 0.46, 0.45, 0.94] as const,
-    type: "spring" as const,
-    stiffness: 100,
-    damping: 15,
-  };
-
-
-
   return (
-    <motion.div
-      key={`${screenType}-${label}`} // Key changes trigger re-mount for position changes
-      layout
-      layoutId={label} // Consistent layoutId for smooth transitions
-      initial="initial"
-      animate="animate"
-      exit="exit"
-      transition={{
-        ...mainTransition,
-        layout: layoutTransition,
-      }}
-      className="constellation"
-      style={{
-        gridRow: currentPosition.row,
-        gridColumn: currentPosition.column,
-        justifySelf: 'center',
-        alignSelf: 'center',
-        width: sizeClass,
-        height: sizeClass,
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}
+      <Link href={href} target={external ? '_blank' : undefined}
+        style={{
+          gridRow: currentPosition.row,
+          gridColumn: currentPosition.column,
+          justifySelf: 'center',
+          alignSelf: 'center',
+          width: sizeClass,
+          height: sizeClass,
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
     >
-      <Link
-        href={href}
-        target={external ? '_blank' : undefined}
-        className="flex flex-col items-center justify-center w-full h-full transition-all duration-300 ease-in-out hover:scale-105"
+      <motion.div
+        key={`${screenType}-${label}`} // trigger re-mount
+        transition={{
+          duration: 1, 
+          delay: 0.1,
+          ease: "easeInOut", 
+          scale: { duration: 0.3, ease: "easeInOut" },
+        }}
+        className="constellation flex flex-col items-center w-full h-full"
+        whileHover={{ scale: 1.1, filter: "drop-shadow(0 0 25px rgba(255, 255, 255, 0.75))" }}
       >
         <svg viewBox="0 0 100 100">
-          {patterns.stars.map((star, idx) => (
-            <motion.circle
-              key={idx}
-              className="constellation-star"
-              cx={star.cx}
-              cy={star.cy}
-              r={2.5}
-              initial={{ opacity: 0, scale: 2 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ 
-                delay: 0.3 + idx * 0.09, 
-                duration: 0.5,
-                type: "spring" as const,
-                stiffness: 120,
-                damping: 20
-              }}
-            />
-          ))}
           {patterns.lines.map((line, idx) => (
             <motion.line
               key={idx}
-              className="constellation-line"
+              className="line"
               x1={line.x1}
               y1={line.y1}
               x2={line.x2}
@@ -202,21 +159,37 @@ const Constellation: React.FC<ConstellationProps> = ({ label, href, external = f
               transition={{ 
                 delay: 0.5 + idx * 0.15,
                 duration: 0.6,
-                ease: "easeInOut" as const
+                ease: "easeInOut"
+              }}
+            />
+          ))}
+          {patterns.stars.map((star, idx) => (
+            <motion.circle
+              key={idx}
+              className="star"
+              cx={star.cx}
+              cy={star.cy}
+              r={2.5}
+              initial={{ opacity: 0, scale: 2 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ 
+                delay: 0.3 + idx * 0.09, 
+                duration: 0.5,
+                ease: "easeInOut"
               }}
             />
           ))}
         </svg>
         <motion.span 
-          className="constellation-label"
+          className="label"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 0.3 }}
         >
           {label}
         </motion.span>
-      </Link>
-    </motion.div>
+      </motion.div>
+    </Link>
   );
 };
 

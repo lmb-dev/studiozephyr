@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ViewTransitions} from "next-view-transitions";
 import { Give_You_Glory, Allura } from "next/font/google";
 import "./globals.css";
 
@@ -25,18 +26,21 @@ export const metadata: Metadata = {
 
 export default function RootLayout({children}: Readonly<{children: React.ReactNode}>) {
   return (
-    <html lang="en">
-      <head>
-        <link rel="preload" href="/moon.webp" as="image" />
-      </head>
+    <ViewTransitions>
+      <html lang="en">
+        <head>
+          <link rel="preload" href="/moon.webp" as="image" />
+        </head>
 
-      <body className={`${glory.className} ${allura.className} antialiased`}>
-        <Header/>
-        <StarBackground/>        
-        <MouseFollower/>
-        <main>{children}</main>
-        <Watermark/>
-      </body>
-    </html>
+        <body className={`${glory.className} ${allura.className} antialiased`}>
+          <Header/>
+          <StarBackground/>        
+          <MouseFollower/>
+          <main style={{ viewTransitionName: "page" }}>{children}</main>
+          <Watermark/>
+        </body>
+      </html>
+    </ViewTransitions>
+
   );
 }
