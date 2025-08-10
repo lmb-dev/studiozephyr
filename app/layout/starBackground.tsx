@@ -99,7 +99,7 @@ export default function StarBackground() {
   );
 
   return (
-    <div ref={particlesContainerRef} className="absolute inset-0 h-full z-0">
+    <div ref={particlesContainerRef} className="absolute inset-0 h-full -z-10">
       {init && !isMobile && <Particles id="tsparticles" options={options} />}
     </div>
   );

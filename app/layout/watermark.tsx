@@ -7,7 +7,7 @@ export default function Watermark() {
     <Link
       href="https://github.com/lmb-dev"
       target="_blank"
-      className="fixed bottom-1 left-4 opacity-25 hover:opacity-100 flex text-sm gap-2 transition"
+      className="fixed bottom-1 left-4 opacity-25 hover:opacity-100 flex items-center text-sm italic gap-1 transition"
     >
       Site by lmb-dev
       <FaGithub />

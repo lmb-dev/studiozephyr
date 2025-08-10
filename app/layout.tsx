@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { unstable_ViewTransition as ViewTransition } from 'react'
-import { Give_You_Glory, Allura } from "next/font/google";
+import { Cormorant_Garamond, Tangerine } from "next/font/google";
 import "./globals.css";
 
 import Header from "./layout/header";
@@ -9,14 +9,16 @@ import MouseFollower from "./layout/mouseFollower";
 import Watermark from "./layout/watermark";
 
 
-const allura = Allura({
+const tangerine = Tangerine  ({
   subsets: ["latin"],
-  weight: "400"
+  weight: ["400", "700"],
+  variable: "--tangerine",
 });
 
-const glory = Give_You_Glory({
+const cG = Cormorant_Garamond ({
   subsets: ["latin"],
-  weight: "400"
+  weight: ["300", "400", "500", "600", "700"],
+  style: ["normal", "italic"]
 });
 
 export const metadata: Metadata = {
@@ -27,15 +29,11 @@ export const metadata: Metadata = {
 export default function RootLayout({children}: Readonly<{children: React.ReactNode}>) {
   return (
       <html lang="en">
-        <head>
-          <link rel="preload" href="/moon.webp" as="image" />
-        </head>
-
-        <body className={`${glory.className} ${allura.className} antialiased`}>
+        <body className={`${cG.className} ${tangerine.variable} antialiased`}>
           <Header/>
-          <StarBackground/>        
           <MouseFollower/>
-          <ViewTransition name="page">
+          <StarBackground/>                      
+          <ViewTransition name="page"> 
             <main>{children}</main>
           </ViewTransition>
           <Watermark/>

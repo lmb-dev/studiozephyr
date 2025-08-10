@@ -1,12 +1,35 @@
 'use client'
 import React from 'react';
+import Image from 'next/image'
 
-const Contact: React.FC = () => {
+export default function Contact(){
   return (
-    <div className="min-h-screen flex flex-col relative">
-      TESTETSTST
+    <div className="container">
+      <div className="title-section">
+        <h2 className="text-5xl md:text-8xl">
+          ABOUT ME
+        </h2>
+      </div>
+
+      {/* Header Section - High resolution image */}
+      <div className="flex flex-col lg:flex-row gap-6 items-center">
+        <div className='flex flex-col gap-4'>
+          <span className='text-lg md:text-2xl flex-1'>
+            Hi! I'm Gen, the creator of Studio Zephyr. I started teaching myself digital art and graphic design four years ago as a creative outlet while pursuing my Master's degree in Environmental Science. Now in the final year of my degree, I aim to become a PhD candidate by 2026. I've been lucky enough to work on commissioned designs for clients, which inspired me to establish Studio Zephyr as a business.<br/><br/>
+            Take a look around and enjoy! If you like what you see, feel free to reach out with any enquiries.        
+          </span>
+          <button>Contact me</button>
+        </div>
+        
+        <Image 
+          src="/Gen2.jpg" 
+          alt="Gen Photo" 
+          width={1200}
+          height={1200}
+          className="shadow-lg rounded-lg rounded-t-full  w-[500px] h-[450px] md:h-[550px]"
+        />
+      </div>
+
     </div>
   );
 };
-
-export default Contact;

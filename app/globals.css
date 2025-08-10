@@ -2,20 +2,17 @@
 
 /* #region Defaults */
 :root {
-  --tx-1: #e0e0e0;
-  --tx-2: #c7c7d9;
+  --tx1: #e0e0e0;
+  --tx2: #c7c7d9;
 
-  --ac-1: #7fc8ff;
-  --ac-2: #ffd27d;
+  --bg1: #1f1f3c;
+  --bg2: #0b0b1b;
 
-  --bg-1: #1f1f3c;
-  --bg-2: #0b0b1b;
-
-  --allura: 'Allura', cursive;
+  --tangerine: 'tangerine', cursive;
 }
 
-.allura{
-  font-family: var(--allura);
+.tangerine{
+  font-family: var(--tangerine);
 }
 
 * {
@@ -28,26 +25,30 @@ body::-webkit-scrollbar{
 }
 
 body {
-  background: url('https://www.transparenttextures.com/patterns/stardust.png'), linear-gradient(to bottom, var(--bg-2), var(--bg-1));
+  background: url('https://www.transparenttextures.com/patterns/stardust.png'), linear-gradient(to bottom, var(--bg2), var(--bg1));
   background-attachment: fixed;
-  background-color: var(--bg-2);
-  color: var(--tx-1);
+  background-color: var(--bg2);
+  color: var(--tx1);
   min-height: 100svh;
 }
 
 .mouse-follower{
   color: var(--tx-1);
-  background-color: var(--tx-2);
-  filter: drop-shadow(0 0 20px var(--tx-2));
+  background-color: var(--tx2);
+  filter: drop-shadow(0 0 20px var(--tx2));
 }
 
+::selection {
+  background-color: var(--tx2);
+  color: var(--bg2);
+}
 
 ::view-transition-old(page) {
-  animation: fade-out 0.75s ease-in-out;
+  animation: fade-out 0.5s ease-in-out;
 }
 
 ::view-transition-new(page) {
-  animation: fade-in 0.75s ease-in-out;
+  animation: fade-in 0.5s ease-in-out;
 }
 
 @keyframes fade-out {
@@ -76,14 +77,20 @@ header{
   top: 0px;
   z-index: 40;
 }
-header h1{
-  font-family: var(--allura);
-  font-size: clamp(35px, 5vw, 56px);
-  font-weight: bold;
-  letter-spacing: 0.15em;
+header h1 {
+  color: var(--tx2);
+  font-family: var(--tangerine);
+  font-size: clamp(38px, 4vw, 64px);
+  letter-spacing: 0.05em;
   backdrop-filter: blur(1px);
   width: 100%;
   padding-top: 0.5rem;  
+  font-weight: bold;
+}
+
+.header-bg{
+  background: color-mix(in srgb, var(--bg2) 90%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--tx2) 10%, transparent);
 }
 
 .constellation {
@@ -93,19 +100,51 @@ header h1{
 }
 
 .constellation .star {
-  fill: var(--tx-1);
+  fill: var(--tx1);
   z-index: 2;
 }
 
 .constellation .line {
-  stroke: var(--tx-2);
+  stroke: var(--tx2);
   stroke-width: 1.5;
   z-index: 1;
 }
 
 .constellation .label {
-  color: var(--ac-2);
-  font-size: 16px;
+  color: var(--tx2);
+  font-size: clamp(12px, 1vw, 18px);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+/* #endregion */
+
+
+/* #region Page Constants*/
+.container {
+  @apply mx-auto px-6 py-12 max-w-6xl;
+}
+
+.title-section{
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.title-section h2 {
+  color: var(--tx1);
   font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.title-section p {
+  color: var(--tx2);
+  font-size: 18px;
+  line-height: 1.25;
+}
+
+.title-section p a {
+  color: var(--tx1);
+  text-decoration-line: underline;
+  font-style: italic;
+  margin-left: 1rem;
 }
 /* #endregion */

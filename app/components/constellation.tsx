@@ -40,13 +40,9 @@ const useResponsiveGrid = () => {
         }
       }
     };
-
-    // Check on mount
     checkScreenType();
 
-    // Add event listeners
     window.addEventListener('resize', checkScreenType);
-
     return () => {
       window.removeEventListener('resize', checkScreenType);
     };
@@ -57,22 +53,22 @@ const useResponsiveGrid = () => {
 
 // Simple zodiac constellations - horizontally centered in 100x100 viewport
 const constellationPatterns = {
-  "About Me": {
+  "Etsy": {
     stars: [
-      { cx: 50, cy: 55 }, 
-      { cx: 40, cy: 65 },  
-      { cx: 60, cy: 65 },  
-      { cx: 25, cy: 50 },  
-      { cx: 75, cy: 50 },  
-      { cx: 50, cy: 80 },  
+      { cx: 50, cy: 60 }, 
+      { cx: 40, cy: 70 },  
+      { cx: 60, cy: 70 },  
+      { cx: 25, cy: 55 },  
+      { cx: 75, cy: 55 },  
+      { cx: 50, cy: 85 },  
     ],
     lines: [
-      { x1: 25, y1: 50, x2: 40, y2: 65 },  
-      { x1: 40, y1: 65, x2: 50, y2: 55 },  
-      { x1: 50, y1: 55, x2: 60, y2: 65 }, 
-      { x1: 60, y1: 65, x2: 75, y2: 50 },  
-      { x1: 40, y1: 65, x2: 50, y2: 80 },  
-      { x1: 60, y1: 65, x2: 50, y2: 80 }, 
+      { x1: 25, y1: 55, x2: 40, y2: 70 },  
+      { x1: 40, y1: 70, x2: 50, y2: 60 },  
+      { x1: 50, y1: 60, x2: 60, y2: 70 }, 
+      { x1: 60, y1: 70, x2: 75, y2: 55 },  
+      { x1: 40, y1: 70, x2: 50, y2: 85 },  
+      { x1: 60, y1: 70, x2: 50, y2: 85 }, 
     ],
   },
   "Contact": {
@@ -108,15 +104,50 @@ const constellationPatterns = {
       { x1: 42.5, y1: 50, x2: 32.5, y2: 80 }, 
       { x1: 72.5, y1: 54, x2: 67.5, y2: 85 }, 
     ],
+  },
+  "About Me": {
+    stars: [
+      { cx: 20, cy: 60 }, 
+      { cx: 35, cy: 65 }, 
+      { cx: 50, cy: 70 }, 
+      { cx: 65, cy: 65 }, 
+      { cx: 70, cy: 85 },
+      { cx: 55, cy: 90 }, 
+    ],
+    lines: [
+      { x1: 20, y1: 60, x2: 35, y2: 65 },
+      { x1: 35, y1: 65, x2: 50, y2: 70 },
+      { x1: 50, y1: 70, x2: 65, y2: 65 },
+      { x1: 50, y1: 70, x2: 55, y2: 90 },
+      { x1: 65, y1: 65, x2: 70, y2: 85 },
+      { x1: 70, y1: 85, x2: 55, y2: 90 },
+    ],
+  },
+  "Livestream": {
+    "stars": [
+      { "cx": 50, "cy": 90 },  
+      { "cx": 48, "cy": 74 },  
+      { "cx": 52, "cy": 57 },  
+      { "cx": 35, "cy": 60 },  
+      { "cx": 67, "cy": 62 },  
+      { "cx": 72, "cy": 44 },  
+      { "cx": 31, "cy": 41 }  
+    ],
+    "lines": [
+      { "x1": 50, "y1": 90, "x2": 48, "y2": 74 },  
+      { "x1": 48, "y1": 74, "x2": 52, "y2": 57 },  
+      { "x1": 48, "y1": 74, "x2": 35, "y2": 60 },  
+      { "x1": 48, "y1": 74, "x2": 67, "y2": 62 },  
+      { "x1": 35, "y1": 60, "x2": 31, "y2": 41 },  
+      { "x1": 67, "y1": 62, "x2": 72, "y2": 44 }  
+    ]
   }
 };
 
-const Constellation: React.FC<ConstellationProps> = ({ label, href, external = false, gridPosition }) => {
+export default function Constellation({ label, href, external = false, gridPosition }: ConstellationProps) {
   const patterns = constellationPatterns[label as keyof typeof constellationPatterns];
   const sizeClass = 'clamp(154px, 15vw, 225px)';
   const screenType = useResponsiveGrid();
-
-  // Get current position based on screen type
   const currentPosition = gridPosition[screenType];
 
   return (
@@ -143,7 +174,7 @@ const Constellation: React.FC<ConstellationProps> = ({ label, href, external = f
           scale: { duration: 0.3, ease: "easeInOut" },
         }}
         className="constellation flex flex-col items-center w-full h-full"
-        whileHover={{ scale: 1.1, filter: "drop-shadow(0 0 25px rgba(255, 255, 255, 0.75))" }}
+        whileHover={{ scale: 1.1, filter: "drop-shadow(0 0 25px rgba(255, 255, 255, 0.8))" }}
       >
         <svg viewBox="0 0 100 100">
           {patterns.lines.map((line, idx) => (
@@ -192,5 +223,3 @@ const Constellation: React.FC<ConstellationProps> = ({ label, href, external = f
     </Link>
   );
 };
-
-export default Constellation;
