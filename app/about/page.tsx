@@ -15,7 +15,7 @@ export default function Contact(){
       <div className="flex flex-col lg:flex-row gap-6 items-center">
         <div className='flex flex-col gap-4'>
           <span className='text-lg md:text-2xl flex-1'>
-            Hi! I'm Gen, the creator of Studio Zephyr. I started teaching myself digital art and graphic design four years ago as a creative outlet while pursuing my Master's degree in Environmental Science. Now in the final year of my degree, I aim to become a PhD candidate by 2026. I've been lucky enough to work on commissioned designs for clients, which inspired me to establish Studio Zephyr as a business.<br/><br/>
+            Hi! I&apos;m Gen, the creator of Studio Zephyr. I started teaching myself digital art and graphic design four years ago as a creative outlet while pursuing my Master&apos;s degree in Environmental Science. Now in the final year of my degree, I aim to become a PhD candidate by 2026. I&apos;ve been lucky enough to work on commissioned designs for clients, which inspired me to establish Studio Zephyr as a business.<br/><br/>
             Take a look around and enjoy! If you like what you see, feel free to reach out with any enquiries.        
           </span>
           <button>Contact me</button>

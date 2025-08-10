@@ -8,18 +8,20 @@ export default function ContactPage() {
     message: ''
   })
 
-  const handleInputChange = (e: any) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    })
-  }
 
-  const handleSubmit = (e: any) => {
-    e.preventDefault()
-    const mailtoLink = `mailto:studiozephyruk@outlook.com?subject=${encodeURIComponent(`Email Enquiry from ${formData.name} sent via Studio Zephyr`)}&body=${encodeURIComponent(formData.message)}`
-    window.location.href = mailtoLink
-  }
+const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  setFormData(prev => ({
+    ...prev,
+    [e.target.name]: e.target.value
+  }))
+}
+
+const handleSubmit = (e: React.FormEvent) => {
+  e.preventDefault()
+  const subject = `Email Enquiry from ${formData.name} sent via Studio Zephyr`
+  const mailtoLink = `mailto:studiozephyruk@outlook.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(formData.message)}`
+  window.location.href = mailtoLink
+}
 
 
   return (
