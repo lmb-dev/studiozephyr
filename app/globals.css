@@ -3,7 +3,8 @@
 /* #region Defaults */
 :root {
   --tx1: #e0e0e0;
-  --tx2: #c7c7d9;
+  --tx2: #c4c4c4;
+  --tx3: #d4c5a9;
 
   --bg1: #1f1f3c;
   --bg2: #0b0b1b;
@@ -43,30 +44,22 @@ body {
   color: var(--bg2);
 }
 
-::view-transition-old(page) {
-  animation: fade-out 0.5s ease-in-out;
+::view-transition-old(page-content) {
+  animation: fade-out 1s ease-in-out !important;
 }
 
-::view-transition-new(page) {
-  animation: fade-in 0.5s ease-in-out;
+::view-transition-new(page-content) {
+  animation: fade-in 1s ease-in-out !important;
 }
 
 @keyframes fade-out {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
+  0% { opacity: 1; }
+  50%, 100% { opacity: 0; }
 }
 
 @keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  0%, 50% { opacity: 0} 
+  100% { opacity: 1}
 }
 /* #endregion */
 
@@ -78,7 +71,7 @@ header{
   z-index: 40;
 }
 header h1 {
-  color: var(--tx2);
+  color: var(--tx3);
   font-family: var(--tangerine);
   font-size: clamp(38px, 4vw, 64px);
   letter-spacing: 0.05em;
@@ -111,7 +104,7 @@ header h1 {
 }
 
 .constellation .label {
-  color: var(--tx2);
+  color: var(--tx3);
   font-size: clamp(12px, 1vw, 18px);
   font-weight: 600;
   text-transform: uppercase;
@@ -119,9 +112,9 @@ header h1 {
 /* #endregion */
 
 
-/* #region Page Constants*/
+/* #region Page Content*/
 .container {
-  @apply mx-auto px-6 py-12 max-w-6xl;
+  @apply mx-auto px-8 py-12 max-w-6xl;
 }
 
 .title-section{
@@ -136,15 +129,32 @@ header h1 {
 }
 
 .title-section p {
-  color: var(--tx2);
+  color: var(--tx1);
   font-size: 18px;
   line-height: 1.25;
 }
 
 .title-section p a {
-  color: var(--tx1);
-  text-decoration-line: underline;
+  font-size: 20px;
+  color: var(--tx3);
   font-style: italic;
-  margin-left: 1rem;
+  transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+.title-section p a:hover {
+  text-decoration-line: underline;
+  color: var(--tx1);
+}
+
+.cta-button {
+  padding: 0.5rem 1.5rem; 
+  border: 1px solid var(--tx2); 
+  color: var(--tx1); 
+  font-weight: bold; 
+  font-size: 20px;
+  transition: all 0.3s ease-in-out; 
+}
+.cta-button:hover {
+  background-color: var(--tx2); 
+  color: var(--bg2);
 }
 /* #endregion */

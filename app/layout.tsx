@@ -33,7 +33,7 @@ export default function RootLayout({children}: Readonly<{children: React.ReactNo
           <Header/>
           <MouseFollower/>
           <StarBackground/>                      
-          <ViewTransition name="page"> 
+          <ViewTransition name="page-content"> 
             <main>{children}</main>
           </ViewTransition>
           <Watermark/>
