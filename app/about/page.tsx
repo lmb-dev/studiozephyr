@@ -10,6 +10,10 @@ export default function Contact(){
         <h2 className="text-5xl md:text-8xl">
           ABOUT ME
         </h2>
+        <p>
+          Digital artist and graphic designer currently pursuing a Master's in Environmental Science.<br />
+          Four years of self-taught creativity turned into Studio Zephyr.         
+        </p>
       </div>
 
       {/* Header Section - High resolution image */}
@@ -19,7 +23,7 @@ export default function Contact(){
             Hi! I&apos;m Gen, the creator of Studio Zephyr. I started teaching myself digital art and graphic design four years ago as a creative outlet while pursuing my Master&apos;s degree in Environmental Science. Now in the final year of my degree, I aim to become a PhD candidate by 2026. I&apos;ve been lucky enough to work on commissioned designs for clients, which inspired me to establish Studio Zephyr as a business.<br/><br/>
             Take a look around and enjoy! If you like what you see, feel free to reach out with any enquiries.        
           </span>
-          <Link href='/contact' className='cta-button mx-auto'>CONTACT ME</Link>
+          <Link href='/portfolio' className='lg:flex hidden cta-button mx-auto'>VIEW MY WORK</Link>
         </div>
         
         <div className="w-82">
@@ -28,9 +32,10 @@ export default function Contact(){
             alt="Gen Photo" 
             placeholder="blur"
             priority
-            className="shadow-lg rounded-lg rounded-t-full w-full h-auto"
+            className="shadow-lg rounded-lg rounded-t-full"
           />
         </div>
+        <Link href='/portfolio' className='flex lg:hidden cta-button mx-auto'>VIEW MY WORK</Link>
       </div>
 
     </div>

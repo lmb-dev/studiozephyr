@@ -1,6 +1,5 @@
 'use client'
 import React from 'react';
-import { motion } from 'framer-motion';
 
 export default function Contact() {
   return (
@@ -9,8 +8,9 @@ export default function Contact() {
         <h2 className="text-5xl md:text-8xl">
           LIVESTREAM
         </h2>
-        
-        <p><a href='https://twitch.tv/twitch.tv/xzephyria_'>twitch.tv/xzephyria_</a></p>
+        <p>
+          Join me for gaming and creative streams most evenings at:<br /> <a href='https://twitch.tv/xzephyria_'>twitch.tv/xzephyria_</a>
+        </p>
       </div>
         
       <div className="flex flex-col lg:flex-row gap-4">

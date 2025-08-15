@@ -8,21 +8,19 @@ export default function ContactPage() {
     message: ''
   })
 
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData(prev => ({
+      ...prev,
+      [e.target.name]: e.target.value
+    }))
+  }
 
-const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-  setFormData(prev => ({
-    ...prev,
-    [e.target.name]: e.target.value
-  }))
-}
-
-const handleSubmit = (e: React.FormEvent) => {
-  e.preventDefault()
-  const subject = `Email Enquiry from ${formData.name} sent via Studio Zephyr`
-  const mailtoLink = `mailto:studiozephyruk@outlook.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(formData.message)}`
-  window.location.href = mailtoLink
-}
-
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    const subject = `Email Enquiry from ${formData.name} sent via Studio Zephyr`
+    const mailtoLink = `mailto:studiozephyruk@outlook.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(formData.message)}`
+    window.location.href = mailtoLink
+  }
 
   return (
     <div className="container">
@@ -38,15 +36,12 @@ const handleSubmit = (e: React.FormEvent) => {
       </div>
 
       {/* Contact Form */}
-      <form
-        onSubmit={handleSubmit}
-        className="space-y-4"
-      >
+      <form onSubmit={handleSubmit} className='space-y-4'>
         {/* Name and Email Row */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <label htmlFor="name" className="block text-lg mb-3 font-medium" style={{ color: 'var(--tx1)' }}>
-              Name*
+            <label htmlFor="name" className="input-label">
+              Name
             </label>
             <input
               type="text"
@@ -55,20 +50,13 @@ const handleSubmit = (e: React.FormEvent) => {
               required
               value={formData.name}
               onChange={handleInputChange}
-              className="w-full px-4 py-3 bg-transparent border-2 rounded-none focus:outline-none transition-all duration-300"
-              style={{ 
-                borderColor: 'var(--tx2)', 
-                color: 'var(--tx1)',
-                backgroundColor: 'rgba(31, 31, 60, 0.3)'
-              }}
-              onFocus={(e) => e.target.style.borderColor = 'var(--tx1)'}
-              onBlur={(e) => e.target.style.borderColor = 'var(--tx2)'}
+              className="input-box"
             />
           </div>
           
           <div>
-            <label htmlFor="email" className="block text-lg mb-3 font-medium" style={{ color: 'var(--tx1)' }}>
-              Email Address*
+            <label htmlFor="email" className="input-label">
+              Email Address
             </label>
             <input
               type="email"
@@ -77,22 +65,15 @@ const handleSubmit = (e: React.FormEvent) => {
               required
               value={formData.email}
               onChange={handleInputChange}
-              className="w-full px-4 py-3 bg-transparent border-2 rounded-none focus:outline-none transition-all duration-300"
-              style={{ 
-                borderColor: 'var(--tx2)', 
-                color: 'var(--tx1)',
-                backgroundColor: 'rgba(31, 31, 60, 0.3)'
-              }}
-              onFocus={(e) => e.target.style.borderColor = 'var(--tx1)'}
-              onBlur={(e) => e.target.style.borderColor = 'var(--tx2)'}
+              className="input-box"
             />
           </div>
         </div>
 
         {/* Message Field */}
         <div>
-          <label htmlFor="message" className="block text-lg mb-3 font-medium" style={{ color: 'var(--tx1)' }}>
-            Message*
+          <label htmlFor="message" className="input-label">
+            Message
           </label>
           <textarea
             id="message"
@@ -101,30 +82,14 @@ const handleSubmit = (e: React.FormEvent) => {
             rows={8}
             value={formData.message}
             onChange={handleInputChange}
-            className="w-full px-4 py-3 bg-transparent border-2 rounded-none focus:outline-none transition-all duration-300 resize-vertical"
-            style={{ 
-              borderColor: 'var(--tx2)', 
-              color: 'var(--tx1)',
-              backgroundColor: 'rgba(31, 31, 60, 0.3)'
-            }}
-            onFocus={(e) => e.target.style.borderColor = 'var(--tx1)'}
-            onBlur={(e) => e.target.style.borderColor = 'var(--tx2)'}
+            className="input-box"
           />
         </div>
 
         {/* Submit Button */}
-        <div className="pt-4">
-          <button
-            type="submit"
-            className="px-12 py-4 bg-transparent border-2 text-lg font-semibold uppercase tracking-wider transition-all duration-300"
-            style={{ 
-              borderColor: 'var(--tx1)', 
-              color: 'var(--tx1)'
-            }}
-          >
-            Submit
-          </button>
-        </div>
+        <button type="submit" className="cta-button">
+          SUBMIT
+        </button>
       </form>
     </div>
   )
