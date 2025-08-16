@@ -174,5 +174,9 @@ header h1 {
 .input-box:focus {
   border-color: var(--tx1);
 }
+/* #endregion */
+
+
+/* #region Admin Panel*/
 
 /* #endregion */

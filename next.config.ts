@@ -13,6 +13,9 @@ const nextConfig: NextConfig = {
   experimental: {
     viewTransition: true,
   },
+  images: {
+    domains: ['cdn.studiozephyr.art'], 
+  },
 };
 
 export default nextConfig;

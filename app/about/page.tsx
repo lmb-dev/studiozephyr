@@ -3,7 +3,7 @@ import Image from 'next/image'
 import genImage from '../../public/gen.webp'
 import Link from 'next/link';
 
-export default function Contact(){
+export default function About(){
   return (
     <div className="container">
       <div className="title-section">

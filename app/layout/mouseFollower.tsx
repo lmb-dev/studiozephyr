@@ -21,17 +21,19 @@ export default function MouseFollower() {
 
   
   useEffect(() => {
-    if ('ontouchstart' in window) {setIsTouchDevice(true); return}
+    if ('ontouchstart' in window) { setIsTouchDevice(true); return }
 
-    const moveHandler = (e: MouseEvent) => {
+    const moveHandler = (e: PointerEvent) => {
       mouseX.set(e.clientX);
       mouseY.set(e.clientY);
-      updatePointerState(e);
+      updatePointerState(e as unknown as MouseEvent);
     };
 
-    window.addEventListener('mousemove', moveHandler);
+    window.addEventListener('pointermove', moveHandler);
 
-  }, [updatePointerState, mouseX, mouseY]);
+    return () => window.removeEventListener('pointermove', moveHandler);
+}, [updatePointerState, mouseX, mouseY]);
+
 
   if (isTouchDevice) return null;
   return (

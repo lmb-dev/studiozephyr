@@ -151,19 +151,14 @@ export default function Constellation({ label, href, external = false, gridPosit
   const currentPosition = gridPosition[screenType];
 
   return (
-      <Link href={href} target={external ? '_blank' : undefined}
-        style={{
-          gridRow: currentPosition.row,
-          gridColumn: currentPosition.column,
-          justifySelf: 'center',
-          alignSelf: 'center',
-          width: sizeClass,
-          height: sizeClass,
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}
+    <Link href={href} target={external ? '_blank' : undefined} 
+      className='justify-self-center self-center'
+      style={{
+        gridRow: currentPosition.row,
+        gridColumn: currentPosition.column,
+        width: sizeClass,
+        height: sizeClass,
+      }}
     >
       <motion.div
         key={`${screenType}-${label}`} // trigger re-mount

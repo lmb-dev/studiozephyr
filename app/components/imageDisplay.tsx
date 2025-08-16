@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { createPortal } from 'react-dom'
 
 interface ImageHoverProps {
   imageUrl: string
@@ -9,11 +10,14 @@ interface ImageHoverProps {
 }
 
 export default function ImageDisplay({ imageUrl, name, isGrid = true }: ImageHoverProps) {
+  const [isMobile, setIsMobile] = useState(false);  
   const [isHovered, setIsHovered] = useState(false)
   const [isModalOpen, setIsModalOpen] = useState(false)
-
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
+    setIsMobile(window.innerWidth <= 768);
+    setMounted(true)
     if (isModalOpen) {
       document.body.style.overflow = 'hidden'
     } else {
@@ -25,10 +29,39 @@ export default function ImageDisplay({ imageUrl, name, isGrid = true }: ImageHov
     }
   }, [isModalOpen])
 
+  // Modal content to be rendered in portal
+  const modalContent = (
+    <AnimatePresence>
+      {isModalOpen && (
+        <motion.div
+          className="fixed inset-0 flex items-center justify-center bg-black z-40"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={() => setIsModalOpen(false)}
+          role="button"
+        >
+          <div className="relative w-[100vw] h-[90vh]">
+            <Image
+              src={imageUrl}
+              alt={name}
+              fill
+              className="object-contain"
+              quality={100}
+            />
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-2 md:p-8">
+              <h3 className="text-2xl md:text-4xl tangerine">{name}</h3>
+            </div>
+          </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  )
+
   return (
     <>
       <button
-        className={`relative ${isGrid ? 'max-w-sm' : 'w-128 h-96'}`}
+        className={`relative ${isGrid ? 'max-w-sm' : 'min-w-64 min-h-48 w-[25vw] h-[15vw]'}`}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         onClick={() => setIsModalOpen(true)}
@@ -36,58 +69,18 @@ export default function ImageDisplay({ imageUrl, name, isGrid = true }: ImageHov
         <Image
           src={imageUrl}
           alt={name}
-          width={640}
-          height={480}
-          className={`w-full h-full transition-all duration-300 ${isGrid ? 'object-contain' : 'object-cover'}`}
+          width={1024}
+          height={720}
+          className={`w-full h-full ${isGrid ? 'object-contain rounded-lg' : 'object-cover'}`}
         />
-        <div
-          className={`absolute inset-0 bg-[var(--bg1)]/90 flex justify-center transition-opacity duration-300 ${
-            isHovered ? 'opacity-100' : 'opacity-0'
-          }`}
-        >
+        <div className={`absolute inset-0 flex justify-center bg-[var(--bg1)]/90 transition duration-300 ${isHovered ? 'opacity-100' : 'opacity-0'}`}>
           <span className="font-bold text-3xl top-1/6 tangerine absolute">{name}</span>
-          <span className="font-bold text-md bottom-1/6 uppercase absolute">Learn More</span>
+          <span className="font-bold text-md bottom-1/6 uppercase absolute">View Full</span>
         </div>
       </button>
 
-      {/* Modal */}
-      <AnimatePresence>
-        {isModalOpen && (
-          <motion.div
-            className="fixed -inset-1 bg-black flex items-center justify-center z-40"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setIsModalOpen(false)}
-            role="button"
-          >
-            <div
-              className="relative w-[100vw] h-[90vh] mx-8"
-            >
-              {/* Close button */}
-              <button
-                className="absolute top-5 right-0 text-white hover:text-gray-300 transition-colors z-10"
-                onClick={() => setIsModalOpen(false)}
-              >
-              </button>
-
-              {/* High quality image */}
-              <Image
-                src={imageUrl}
-                alt={name}
-                fill
-                className="object-contain"
-                quality={100}
-              />
-              
-              {/* Image name */}
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-8">
-                <h3 className="text-white text-2xl md:text-4xl font-medium tangerine">{name}</h3>
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {/* Portal for modal */}
+      {mounted && createPortal(modalContent, document.body)}
     </>
   )
 }

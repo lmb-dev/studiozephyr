@@ -2,28 +2,8 @@
 import Link from 'next/link'
 
 
-
-export default function TestimonialsPage() {
-  const testimonials: Testimonial[] = [
-    {
-      id: 1,
-      name: "Sarah Mitchell",
-      text: "Working with Studio Zephyr was an extraordinary experience. The artistic vision and attention to detail brought my ideas to life in ways I never imagined possible.",
-      project: "Custom Portrait Commission"
-    },
-    {
-      id: 2,
-      name: "Marcus Thompson",
-      text: "I commissioned a piece for my partner's birthday and the result was absolutely breathtaking. The artist captured not just the visual elements but the emotional essence of what I was trying to convey.",
-      project: "Anniversary Gift Artwork"
-    },
-    {
-      id: 3,
-      name: "Emma Rodriguez",
-      text: "The professionalism and creativity of Studio Zephyr is unmatched. From initial consultation to final delivery, every step was handled with exceptional care and expertise.",
-      project: "Interior Design Commission"
-    }
-  ]
+export default function Testimonials() {
+  const testimonials: Testimonial[] = []
 
 
 

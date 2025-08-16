@@ -5,9 +5,15 @@ interface Testimonial {
   project: string
 }
 
-interface artwork {
+interface Artwork {
   name: string
   collection: string
   category: string
   imageURL: string
+}
+
+interface Settings {
+  categories: Record<string, string[]>
+  art: Artwork[]
+  testimonies: Testimonial[]
 }
