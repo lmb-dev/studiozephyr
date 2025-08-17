@@ -11,7 +11,7 @@ export default function AdminPanel() {
   const [activeTab, setActiveTab] = useState<'art' | 'testimonials' | 'categories'>('art');
 
   useEffect(() => {
-    fetch(`${process.env.NEXT_PUBLIC_CDN_URL}/settings.json`)
+    fetch(`https://${process.env.NEXT_PUBLIC_CDN_URL}/settings.json`)
       .then(response => response.ok ? response.json() : null)
       .then(data => data && setSettings(data));
   }, []);

@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'next/navigation';
 import Masonry from 'react-masonry-css';
-import ImageDisplay from '../../components/imageDisplay';
+import ImageDisplay from '@/app/components/imageDisplay';
 import Link from 'next/link';
 
 export const runtime = 'edge';

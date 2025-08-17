@@ -3,7 +3,7 @@ import { usePathname } from 'next/navigation'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import Image from 'next/image'
-import moonImage from '../../public/moon.webp'
+import moonImage from '@/public/moon.webp'
 
 export default function Header() {
   const isHome = usePathname() === '/'
@@ -39,7 +39,7 @@ export default function Header() {
             scale: { duration: 0.3, ease: "easeInOut" }
           }}
         >
-          <Image src={moonImage} alt="Moon Button" placeholder="blur" priority />
+          <Image src={moonImage} alt="Moon Button" priority />
           {isHome && <motion.span          
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}

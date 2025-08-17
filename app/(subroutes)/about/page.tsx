@@ -1,6 +1,6 @@
 'use client'
 import Image from 'next/image'
-import genImage from '../../public/gen.webp'
+import genImage from '@/public/gen.webp'
 import Link from 'next/link';
 
 export default function About(){
@@ -30,7 +30,6 @@ export default function About(){
           <Image 
             src={genImage} 
             alt="Gen Photo" 
-            placeholder="blur"
             priority
             className="shadow-lg rounded-lg rounded-t-full"
           />
