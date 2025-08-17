@@ -4,7 +4,6 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 import Image from 'next/image'
 import moonImage from '@/public/moon.webp'
-import { span } from 'framer-motion/client'
 
 export default function Header() {
   const isHome = usePathname() === '/'
