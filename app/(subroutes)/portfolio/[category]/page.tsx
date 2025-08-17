@@ -63,7 +63,7 @@ export default function CategoryPortfolio() {
           
           return (
             <div key={collection}>
-              <h3 className="uppercase text-3xl md:text-5xl font-bold mx-4">
+              <h3 className="uppercase text-3xl md:text-5xl font-bold mx-4 mb-1">
                 {collection}
               </h3>
               

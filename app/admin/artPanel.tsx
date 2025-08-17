@@ -135,7 +135,7 @@ export default function ArtPanel({ settings, setSettings }: ArtPanelProps) {
                 alt={artwork.name}
                 className="w-32 h-28 object-cover rounded-md border border-gray-600"
               />
-              <button onClick={() => removeArtwork(index)} className="admin-btn-red absolute top-1 right-1 z-10 ">
+              <button onClick={() => removeArtwork(index)} className="admin-btn-red absolute top-1 right-1 z-10 !p-1">
                 <IoClose size={16} />
               </button>
               <div className="absolute inset-0 bg-gray-900 bg-opacity-75 rounded-md flex flex-col justify-center items-center text-center opacity-0 group-hover:opacity-100 transition-opacity p-2 z-0">

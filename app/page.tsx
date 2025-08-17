@@ -54,7 +54,7 @@ export default function Home() {
           desktopHorizontal: { row: 9, column: 7 },
           desktopVertical: { row: 7, column: 7 },
           mobileVertical: { row: 9, column: 7 },
-          mobileHorizontal: { row: 9, column: 8 }
+          mobileHorizontal: { row: 9, column: 9 }
         }}
       />
     </section>

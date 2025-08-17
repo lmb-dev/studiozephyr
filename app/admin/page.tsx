@@ -1,6 +1,7 @@
 'use client'
 import  { useState, useEffect} from 'react';
 import { IoSave } from 'react-icons/io5';
+import { FaCode } from 'react-icons/fa';
 import ArtPanel from './artPanel';
 import TestimonialsPanel from './testimonialPanel';
 import CategoriesPanel from './categoriesPanel';
@@ -8,7 +9,8 @@ import CategoriesPanel from './categoriesPanel';
 
 export default function AdminPanel() {
   const [settings, setSettings] = useState<Settings>({categories:{}, art:[], testimonials:[]});
-  const [activeTab, setActiveTab] = useState<'art' | 'testimonials' | 'categories'>('art');
+  const [activeTab, setActiveTab] = useState<'art' | 'testimonials' | 'categories' | 'json'>('art');
+  const [jsonText, setJsonText] = useState('');
 
   useEffect(() => {
     fetch(`https://${process.env.NEXT_PUBLIC_CDN_URL}/settings.json`)
@@ -32,6 +34,24 @@ export default function AdminPanel() {
     }
   };
 
+  useEffect(() => {
+    if (activeTab === 'json') {
+      setJsonText(JSON.stringify(settings, null, 2));
+    }
+  }, [activeTab, settings]);
+
+  const handleJsonChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const newJsonText = e.target.value;
+    setJsonText(newJsonText);
+    
+    try {
+      const parsedSettings = JSON.parse(newJsonText); //parse to validate
+      setSettings(parsedSettings);
+    } catch (error) {
+      alert('Invalid JSON Submitted');
+    }
+  };
+
   return (
     <div className="container">
 
@@ -46,7 +66,7 @@ export default function AdminPanel() {
       {/* Tabs */}
       <div className="bg-[var(--bg2)] rounded-lg">
         <nav className="border-b border-gray-600">
-          {(['art', 'testimonials', 'categories'] as const).map((tab) => (
+          {(['art', 'testimonials', 'categories', 'json'] as const).map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
@@ -66,6 +86,17 @@ export default function AdminPanel() {
           {activeTab === 'art' && (<ArtPanel settings={settings} setSettings={setSettings}/>)}
           {activeTab === 'testimonials' && (<TestimonialsPanel settings={settings} setSettings={setSettings}/>)}
           {activeTab === 'categories' && (<CategoriesPanel settings={settings} setSettings={setSettings}/>)}
+          {activeTab === 'json' && (
+            <div className="space-y-4">
+              <h2 className="text-xl font-semibold">Raw JSON Editor</h2>
+              <textarea
+                value={jsonText}
+                onChange={handleJsonChange}
+                className="w-full h-96 admin-box-l"
+                placeholder="Edit the raw JSON here..."
+              />
+            </div>
+          )}
         </div>
       </div>
     </div>

@@ -23,7 +23,7 @@ export default function Portfolio() {
         setCategories(Object.keys(settings.categories))
 
       } catch (err) {
-        console.error('Error loading testimonials:', err)
+        console.error('Error loading Categories:', err)
       } 
     }
 
@@ -31,7 +31,9 @@ export default function Portfolio() {
   }, [])
 
   const getArtworksByCategory = (category: string) => {
-    return artworks.filter(artwork => artwork.category === category);
+    const filtered = artworks.filter(artwork => artwork.category === category);
+    const shuffled = [...filtered].sort(() => Math.random() - 0.5);
+    return shuffled.slice(0, 6);
   };
 
   return (
@@ -46,9 +48,8 @@ export default function Portfolio() {
       </div>
 
       <div className="w-full space-y-16">
-        {categories.map((category, index) => {
-          let categoryArtworks = getArtworksByCategory(category);
-          categoryArtworks = [...categoryArtworks].sort(() => Math.random() - 0.5);
+        {categories.map((category) => {
+          const categoryArtworks = getArtworksByCategory(category);
           
           return (
             <div key={category} className="w-full">
@@ -62,8 +63,6 @@ export default function Portfolio() {
                   spaceBetween={35}
                   slidesPerView="auto"
                   loop={true}
-                  autoplay={{delay: 0, pauseOnMouseEnter: true,}}
-                  speed={5000 + (index * 500)} 
                   cssMode={false}
                 >
                   {[...categoryArtworks, ...categoryArtworks].map((artwork, artIndex) => (
