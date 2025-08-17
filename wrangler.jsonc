@@ -26,12 +26,7 @@
 	 * https://developers.cloudflare.com/workers/runtime-apis/bindings/
 	 */
 
-	 "r2_buckets": [
-    {
-      "binding": "R2",
-      "bucket_name": "studiozephyr"
-    }
-  ],
+	 "r2_buckets": [{"binding": "R2", "bucket_name": "studiozephyr"}],
 
 	/**
 	 * Environment Variables
@@ -39,8 +34,7 @@
 	 */
 
 
-	"vars": { "NEXT_PUBLIC_CDN_URL": "cdn.studiozephyr.art" },
-	
+	"vars": { "NEXT_PUBLIC_CDN_URL": "cdn.studiozephyr.art" }
 	
 	/**
 	 * Note: Use secrets to store sensitive data.
