@@ -5,12 +5,6 @@ import Masonry from 'react-masonry-css';
 import ImageDisplay from '../../components/imageDisplay';
 import Link from 'next/link';
 
-interface Artwork {
-  name: string;
-  collection: string;
-  category: string;
-  imageURL: string;
-}
 
 export default function CategoryPortfolio() {
   const params = useParams();
@@ -19,26 +13,27 @@ export default function CategoryPortfolio() {
   const [collections, setCollections] = useState<string[]>([]);
 
   useEffect(() => {
-    // Load the JSON data and filter by category
-    fetch('/art.json')
-      .then(res => res.json())
-      .then((data) => {
-        const artworksData = data as Artwork[];
+    const fetchCategory = async () => {
+      try {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_CDN_URL}/settings.json`);
+        if (!response.ok) throw new Error('Failed to fetch settings');
+
+        const settings: Settings = await response.json();
         
         // Filter artworks by the current category
-        const categoryArtworks = artworksData.filter(
-          artwork => artwork.category.toLowerCase() === decodeURIComponent(category).toLowerCase()
-        );
-        
+        const categoryArtworks = settings.art.filter(artwork => artwork.category.toLowerCase() === decodeURIComponent(category).toLowerCase());
         setArtworks(categoryArtworks);
         
         // Get unique collections within this category
-        const uniqueCollections = [...new Set(categoryArtworks.map(artwork => artwork.collection))];
-        setCollections(uniqueCollections);
-      })
-      .catch(err => {
-        console.error('Error loading artwork data:', err);
-      });
+        const categoryCollections = settings.categories[decodeURIComponent(category)];
+        setCollections(categoryCollections);
+
+      } catch (err) {
+        console.error('Error loading category data:', err);
+      }
+    };
+
+    fetchCategory();
   }, [category]);
 
   const getArtworksByCollection = (collection: string) => {

@@ -7,7 +7,7 @@ import CategoriesPanel from './categoriesPanel';
 
 
 export default function AdminPanel() {
-  const [settings, setSettings] = useState<Settings>({categories:{}, art:[], testimonies:[]});
+  const [settings, setSettings] = useState<Settings>({categories:{}, art:[], testimonials:[]});
   const [activeTab, setActiveTab] = useState<'art' | 'testimonials' | 'categories'>('art');
 
   useEffect(() => {
@@ -16,7 +16,7 @@ export default function AdminPanel() {
       .then(data => data && setSettings(data));
   }, []);
 
-  const saveSettings = async (): Promise<void> => {
+  const saveSettings = async () => {
     const response = await fetch('/api/r2Json', {
       method: 'POST',
       headers: {
@@ -36,9 +36,9 @@ export default function AdminPanel() {
     <div className="container">
 
       {/* Header */}
-      <div className="flex justify-between items-center mb-2">
+      <div className="flex justify-between items-center m-2">
         <h1 className="text-4xl font-bold uppercase">Admin Panel</h1>
-        <button onClick={saveSettings} className=" flex items-center gap-2 px-4 py-2 rounded-md bg-green-600 hover:brightness-125 transition">
+        <button onClick={saveSettings} className="admin-btn-green">
           <IoSave size={16}/> Save All
         </button>
       </div>
@@ -62,9 +62,11 @@ export default function AdminPanel() {
         </nav>
 
         {/* Panel Content */}
-        {activeTab === 'art' && (<ArtPanel settings={settings} setSettings={setSettings}/>)}
-        {activeTab === 'testimonials' && (<TestimonialsPanel settings={settings} setSettings={setSettings}/>)}
-        {activeTab === 'categories' && (<CategoriesPanel settings={settings} setSettings={setSettings}/>)}
+        <div className='p-6'>
+          {activeTab === 'art' && (<ArtPanel settings={settings} setSettings={setSettings}/>)}
+          {activeTab === 'testimonials' && (<TestimonialsPanel settings={settings} setSettings={setSettings}/>)}
+          {activeTab === 'categories' && (<CategoriesPanel settings={settings} setSettings={setSettings}/>)}
+        </div>
       </div>
     </div>
   );

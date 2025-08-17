@@ -1,11 +1,27 @@
 'use client'
 import Link from 'next/link'
+import { useState, useEffect } from 'react'
 
 
 export default function Testimonials() {
-  const testimonials: Testimonial[] = []
+  const [testimonials, setTestimonials] = useState<Testimonial[]>([])
 
+  useEffect(() => {
+    const fetchTestimonials = async () => {
+      try {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_CDN_URL}/settings.json`)   
+        if (!response.ok) throw new Error('Failed to fetch settings')
 
+        const settings: Settings = await response.json()
+        setTestimonials(settings.testimonials)
+
+      } catch (err) {
+        console.error('Error loading testimonials:', err)
+      } 
+    }
+
+    fetchTestimonials()
+  }, [])
 
   return (
     <div className="container">
@@ -21,8 +37,8 @@ export default function Testimonials() {
 
       {/* Testimonials Grid */}
       <div className="md:w-1/2 mx-auto mb-16">
-        {testimonials.map((testimonial: Testimonial) => (
-          <div key={testimonial.id} className="text-center mb-12">
+        {testimonials.map((testimonial, index) => (
+          <div key={index} className="text-center mb-12">
 
             <div className="w-[250px] h-[1px] bg-[linear-gradient(90deg,transparent,var(--tx3),transparent)] mx-auto mb-12"></div>
 

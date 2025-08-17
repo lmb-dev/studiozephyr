@@ -1,5 +1,4 @@
 interface Testimonial {
-  id: number
   name: string
   text: string
   project: string
@@ -15,5 +14,5 @@ interface Artwork {
 interface Settings {
   categories: Record<string, string[]>
   art: Artwork[]
-  testimonies: Testimonial[]
+  testimonials: Testimonial[]
 }

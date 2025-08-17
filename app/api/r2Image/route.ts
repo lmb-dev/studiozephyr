@@ -22,7 +22,7 @@ export async function POST(request: NextRequest) {
       },
     });
 
-    const cdnDomain = process.env.CDNUrl;
+    const cdnDomain = process.env.NEXT_PUBLIC_CDN_URL;
     const imageUrl = `https://${cdnDomain}/${filename}`;
 
     return NextResponse.json({ url: imageUrl,});

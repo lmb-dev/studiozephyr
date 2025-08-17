@@ -18,19 +18,22 @@ export default function Portfolio() {
   const [categories, setCategories] = useState<string[]>([]);
 
   useEffect(() => {
-    // Load the JSON data
-    fetch('art.json')
-      .then(res => res.json())
-      .then((data) => {
-        const artworksData = data as Artwork[];
-        setArtworks(artworksData);
-        
-        // Get unique categories
-        const uniqueCategories = [...new Set(artworksData.map(artwork => artwork.category))];
-        setCategories(uniqueCategories);
-      })
-      .catch(err => console.error('Error loading artwork data:', err));
-  }, []);
+    const fetchCategories = async () => {
+      try {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_CDN_URL}/settings.json`)   
+        if (!response.ok) throw new Error('Failed to fetch settings')
+
+        const settings: Settings = await response.json()
+        setArtworks(settings.art);
+        setCategories(Object.keys(settings.categories))
+
+      } catch (err) {
+        console.error('Error loading testimonials:', err)
+      } 
+    }
+
+    fetchCategories()
+  }, [])
 
   const getArtworksByCategory = (category: string) => {
     return artworks.filter(artwork => artwork.category === category);
