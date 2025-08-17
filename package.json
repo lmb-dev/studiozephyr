@@ -1,6 +1,6 @@
 {
-	"name": "studio-zephyr",
-	"version": "0.1.0",
+	"name": "studiozephyr",
+	"version": "1.0.0",
 	"private": true,
 	"scripts": {
 		"dev": "next dev --turbopack",
