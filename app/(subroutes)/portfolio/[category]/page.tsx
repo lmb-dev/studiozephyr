@@ -16,7 +16,7 @@ export default function CategoryPortfolio() {
   useEffect(() => {
     const fetchCategory = async () => {
       try {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_CDN_URL}/settings.json`);
+        const response = await fetch(`https://${process.env.NEXT_PUBLIC_CDN_URL}/settings.json`);
         if (!response.ok) throw new Error('Failed to fetch settings');
 
         const settings: Settings = await response.json();

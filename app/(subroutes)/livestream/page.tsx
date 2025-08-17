@@ -15,12 +15,12 @@ export default function Contact() {
         
       <div className="flex flex-col lg:flex-row gap-4">
         <iframe
-          src="https://player.twitch.tv/?channel=xzephyria_&parent=localhost"
+          src="https://player.twitch.tv/?channel=xzephyria_&parent=studiozephyr.art"
           className="w-full h-64 sm:h-80 lg:h-[480px] rounded-lg shadow-lg"
           allowFullScreen       
         />
         <iframe
-          src="https://www.twitch.tv/embed/xzephyria_/chat?parent=localhost&darkpopout"
+          src="https://www.twitch.tv/embed/xzephyria_/chat?parent=studiozephyr.art&darkpopout"
           className="h-64 sm:h-80 lg:h-[480px] rounded-lg shadow-lg"       
         />
       </div>

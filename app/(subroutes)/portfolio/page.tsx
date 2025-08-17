@@ -6,12 +6,7 @@ import 'swiper/css';
 import ImageDisplay from '@/app/components/imageDisplay';
 import Link from 'next/link';
 
-interface Artwork {
-  name: string;
-  collection: string;
-  category: string;
-  imageURL: string;
-}
+
 
 export default function Portfolio() {
   const [artworks, setArtworks] = useState<Artwork[]>([]);
@@ -20,7 +15,7 @@ export default function Portfolio() {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_CDN_URL}/settings.json`)   
+        const response = await fetch(`https://${process.env.NEXT_PUBLIC_CDN_URL}/settings.json`)   
         if (!response.ok) throw new Error('Failed to fetch settings')
 
         const settings: Settings = await response.json()
