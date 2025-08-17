@@ -39,7 +39,7 @@
 	 */
 
 
-	"vars": { "NEXT_PUBLIC_CDN_URL": "cdn.studiozephyr.pages.dev" },
+	"vars": { "NEXT_PUBLIC_CDN_URL": "cdn.studiozephyr.art" },
 	
 	
 	/**

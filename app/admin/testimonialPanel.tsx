@@ -13,13 +13,13 @@ export default function TestimonialsPanel({ settings, setSettings }: Testimonial
   const addTestimonial = () => {
     const { name, text, project } = newTestimonial;
     if (name && text && project) {
-      setSettings(prev => ({...prev, testimonies: [...prev.testimonials, newTestimonial]}));
+      setSettings(prev => ({...prev, testimonials: [...prev.testimonials, newTestimonial]}));
       setNewTestimonial({ name: '', text: '', project: '' });
     }
   };
 
   const removeTestimonial = (index: number) => {
-    setSettings(prev => ({...prev, testimonies: prev.testimonials.filter((_, i) => i !== index)}));
+    setSettings(prev => ({...prev, testimonials: prev.testimonials.filter((_, i) => i !== index)}));
   };
 
   const updateField = (field: keyof Testimonial, value: string) => {
