@@ -5,6 +5,7 @@ import Masonry from 'react-masonry-css';
 import ImageDisplay from '../../components/imageDisplay';
 import Link from 'next/link';
 
+export const runtime = 'edge';
 
 export default function CategoryPortfolio() {
   const params = useParams();
