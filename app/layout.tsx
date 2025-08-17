@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { unstable_ViewTransition as ViewTransition } from 'react'
-import { Cormorant_Garamond, Tangerine } from "next/font/google";
+import { Cormorant_Garamond, Allura } from "next/font/google";
 import "./globals.css";
 
 import Header from "./layout/header";
@@ -9,16 +9,18 @@ import MouseFollower from "./layout/mouseFollower";
 import Watermark from "./layout/watermark";
 
 
-const tangerine = Tangerine  ({
+const allura = Allura ({
   subsets: ["latin"],
-  weight: ["400", "700"],
-  variable: "--tangerine",
+  weight: ["400"],
+  preload: true,
+  variable: "--allura"
 });
 
 const cG = Cormorant_Garamond ({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
-  style: ["normal", "italic"]
+  style: ["normal", "italic"],
+  preload: true
 });
 
 export const metadata: Metadata = {
@@ -29,7 +31,7 @@ export const metadata: Metadata = {
 export default function RootLayout({children}: Readonly<{children: React.ReactNode}>) {
   return (
       <html lang="en">
-        <body className={`${cG.className} ${tangerine.variable} antialiased`}>
+        <body className={`${cG.className} ${allura.variable} antialiased`}>
           <Header/>
           <MouseFollower/>
           <StarBackground/>                      

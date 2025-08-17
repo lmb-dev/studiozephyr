@@ -9,11 +9,11 @@
   --bg1: #1f1f3c;
   --bg2: #0b0b1b;
 
-  --tangerine: 'tangerine', cursive;
+  --allura: 'allura', cursive;
 }
 
-.tangerine{
-  font-family: var(--tangerine);
+.allura{
+  font-family: var(--allura);
 }
 
 * {
@@ -26,7 +26,7 @@ body::-webkit-scrollbar{
 }
 
 body {
-  background: url('https://www.transparenttextures.com/patterns/stardust.png'), linear-gradient(to bottom, var(--bg2), var(--bg1));
+  background: url('/stardust.webp'), linear-gradient(to bottom, var(--bg2), var(--bg1));
   background-attachment: fixed;
   background-color: var(--bg2);
   color: var(--tx1);
@@ -71,14 +71,13 @@ header{
   z-index: 40;
 }
 header h1 {
-  color: var(--tx3);
-  font-family: var(--tangerine);
+  color: var(--tx1);
+  font-family: var(--allura);
   font-size: clamp(38px, 4vw, 64px);
   letter-spacing: 0.05em;
   backdrop-filter: blur(1px);
   width: 100%;
   padding-top: 0.5rem;  
-  font-weight: bold;
 }
 
 .constellation {

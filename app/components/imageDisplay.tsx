@@ -48,7 +48,7 @@ export default function ImageDisplay({ imageUrl, name, isGrid = true }: ImageHov
               quality={100}
             />
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-2 md:p-8">
-              <h3 className="text-2xl md:text-4xl tangerine">{name}</h3>
+              <h3 className="text-2xl md:text-4xl allura">{name}</h3>
             </div>
           </div>
         </motion.div>
@@ -72,7 +72,7 @@ export default function ImageDisplay({ imageUrl, name, isGrid = true }: ImageHov
           className={`w-full h-full ${isGrid ? 'object-contain rounded-lg' : 'object-cover'}`}
         />
         <div className={`absolute inset-0 flex justify-center bg-[var(--bg1)]/90 transition duration-300 ${isHovered ? 'opacity-100' : 'opacity-0'}`}>
-          <span className="font-bold text-3xl top-1/6 tangerine absolute">{name}</span>
+          <span className=" text-3xl top-1/6 allura absolute">{name}</span>
           <span className="font-bold text-md bottom-1/6 uppercase absolute">View Full</span>
         </div>
       </button>

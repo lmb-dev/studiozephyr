@@ -1,7 +1,6 @@
 'use client'
 import  { useState, useEffect} from 'react';
 import { IoSave } from 'react-icons/io5';
-import { FaCode } from 'react-icons/fa';
 import ArtPanel from './artPanel';
 import TestimonialsPanel from './testimonialPanel';
 import CategoriesPanel from './categoriesPanel';
@@ -47,8 +46,8 @@ export default function AdminPanel() {
     try {
       const parsedSettings = JSON.parse(newJsonText); //parse to validate
       setSettings(parsedSettings);
-    } catch (error) {
-      alert('Invalid JSON Submitted');
+    } catch (err) {
+      alert(`Invalid JSON Submitted:${err}`,);
     }
   };
 
