@@ -28,7 +28,7 @@ export default function CategoriesPanel({ settings, setSettings }: CategoriesPan
   };
 
   const removeCategory = (category: string) => {
-    const { [category]: removed, ...rest } = settings.categories;
+    const { [category]: _, ...rest } = settings.categories;
     setSettings(prev => ({...prev, categories: rest}));
   };
 

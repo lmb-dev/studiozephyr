@@ -10,13 +10,11 @@ interface ImageHoverProps {
 }
 
 export default function ImageDisplay({ imageUrl, name, isGrid = true }: ImageHoverProps) {
-  const [isMobile, setIsMobile] = useState(false);  
   const [isHovered, setIsHovered] = useState(false)
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
-    setIsMobile(window.innerWidth <= 768);
     setMounted(true)
     if (isModalOpen) {
       document.body.style.overflow = 'hidden'
