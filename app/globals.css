@@ -71,13 +71,17 @@ header{
   z-index: 40;
 }
 header h1 {
-  color: var(--tx1);
   font-family: var(--allura);
   font-size: clamp(38px, 4vw, 64px);
   letter-spacing: 0.05em;
   backdrop-filter: blur(1px);
   width: 100%;
   padding-top: 0.5rem;  
+
+  background: linear-gradient(90deg, var(--tx1), var(--tx2));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .constellation {

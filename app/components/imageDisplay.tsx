@@ -72,7 +72,7 @@ export default function ImageDisplay({ imageUrl, name, isGrid = true }: ImageHov
           className={`w-full h-full ${isGrid ? 'object-contain rounded-lg' : 'object-cover'}`}
         />
         <div className={`absolute inset-0 flex justify-center bg-[var(--bg1)]/90 transition duration-300 ${isHovered ? 'opacity-100' : 'opacity-0'}`}>
-          <span className=" text-3xl top-1/6 allura absolute">{name}</span>
+          <span className="text-3xl top-1/6 allura absolute p-1">{name}</span>
           <span className="font-bold text-md bottom-1/6 uppercase absolute">View Full</span>
         </div>
       </button>
