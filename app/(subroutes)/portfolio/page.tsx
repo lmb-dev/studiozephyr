@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
-import 'swiper/css';
 import ImageDisplay from '@/app/components/imageDisplay';
 import Link from 'next/link';
 

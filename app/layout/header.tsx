@@ -28,8 +28,8 @@ export default function Header() {
           className='constellation absolute left-1/2 -translate-x-1/2 -ml-0.5'
           animate={{
             top: isHome ? '25vh' : '-0.25rem',
-            height: isHome ? 'clamp(124px, 15vw, 256px)' : 'clamp(64px, 6vw, 108px)',
-            width: isHome ? 'clamp(124px, 15vw, 256px)' : 'clamp(64px, 6vw, 108px)',
+            height: isHome ? 'clamp(124px, 15vw, 256px)' : 'clamp(64px, 8vw, 108px)',
+            width: isHome ? 'clamp(124px, 15vw, 256px)' : 'clamp(64px, 8vw, 108px)',
           }}
           whileHover={{ scale: 1.1, filter: "drop-shadow(0 0 25px rgba(255, 255, 255, 0.3))" }}
           transition={{
