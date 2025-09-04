@@ -1,27 +1,13 @@
-'use client'
+export const runtime = 'edge';
+import { getRequestContext } from "@cloudflare/next-on-pages";
 import Link from 'next/link'
-import { useState, useEffect } from 'react'
 
 
-export default function Testimonials() {
-  const [testimonials, setTestimonials] = useState<Testimonial[]>([])
-
-  useEffect(() => {
-    const fetchTestimonials = async () => {
-      try {
-        const response = await fetch(`https://${process.env.NEXT_PUBLIC_CDN_URL}/settings.json`)   
-        if (!response.ok) throw new Error('Failed to fetch settings')
-
-        const settings: Settings = await response.json()
-        setTestimonials(settings.testimonials)
-
-      } catch (err) {
-        console.error('Error loading testimonials:', err)
-      } 
-    }
-
-    fetchTestimonials()
-  }, [])
+export default async function Testimonials() {
+  const KV = getRequestContext().env.KV;
+  const data = await KV.get("CONTENT_MAP");
+  const settings: Settings = data ? JSON.parse(data) : {};
+  const testimonials = settings.testimonials;
 
   return (
     <div className="container">

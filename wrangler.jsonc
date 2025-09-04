@@ -28,6 +28,8 @@
 
 	 "r2_buckets": [{"binding": "R2", "bucket_name": "studiozephyr"}],
 
+	 "kv_namespaces": [{"binding": "KV", "id":"5135b60daf434e428ceeaaa8dab151d0"}],
+
 	/**
 	 * Environment Variables
 	 * https://developers.cloudflare.com/workers/wrangler/configuration/#environment-variables
