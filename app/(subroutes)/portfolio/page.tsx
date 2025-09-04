@@ -1,10 +1,10 @@
 'use client'
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import { fetchSettings } from "@/app/utils/fetchSettings";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import ImageDisplay from '@/app/components/imageDisplay';
 import Link from 'next/link';
-
 
 
 export default function Portfolio() {
@@ -12,22 +12,13 @@ export default function Portfolio() {
   const [categories, setCategories] = useState<string[]>([]);
 
   useEffect(() => {
-    const fetchCategories = async () => {
-      try {
-        const response = await fetch(`https://${process.env.NEXT_PUBLIC_CDN_URL}/settings.json`)   
-        if (!response.ok) throw new Error('Failed to fetch settings')
-
-        const settings: Settings = await response.json()
-        setArtworks(settings.art);
-        setCategories(Object.keys(settings.categories))
-
-      } catch (err) {
-        console.error('Error loading Categories:', err)
-      } 
-    }
-
-    fetchCategories()
-  }, [])
+    fetchSettings().then((s) => {
+      if (s) {
+        setArtworks(s.art);
+        setCategories(Object.keys(s.categories));
+      }
+    });
+  }, []);
 
   const getArtworksByCategory = (category: string) => {
     const filtered = artworks.filter(artwork => artwork.category === category);

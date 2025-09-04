@@ -1,5 +1,6 @@
 'use client'
 import  { useState, useEffect} from 'react';
+import { fetchSettings } from "@/app/utils/fetchSettings";
 import { IoSave } from 'react-icons/io5';
 import ArtPanel from './artPanel';
 import TestimonialsPanel from './testimonialPanel';
@@ -12,13 +13,11 @@ export default function AdminPanel() {
   const [jsonText, setJsonText] = useState('');
 
   useEffect(() => {
-    fetch(`https://${process.env.NEXT_PUBLIC_CDN_URL}/settings.json`)
-      .then(response => response.ok ? response.json() : null)
-      .then(data => data && setSettings(data));
+    fetchSettings().then((s) => s && setSettings(s));
   }, []);
 
   const saveSettings = async () => {
-    const response = await fetch('/api/r2Json', {
+    const response = await fetch('/api/kvJson', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

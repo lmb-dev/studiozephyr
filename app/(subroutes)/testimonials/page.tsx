@@ -1,13 +1,15 @@
-export const runtime = 'edge';
-import { getRequestContext } from "@cloudflare/next-on-pages";
+'use client'
 import Link from 'next/link'
+import { useState, useEffect } from 'react'
+import { fetchSettings } from "@/app/utils/fetchSettings";
 
 
-export default async function Testimonials() {
-  const KV = getRequestContext().env.KV;
-  const data = await KV.get("CONTENT_MAP");
-  const settings: Settings = data ? JSON.parse(data) : {};
-  const testimonials = settings.testimonials;
+export default function Testimonials() {
+  const [testimonials, setTestimonials] = useState<Testimonial[]>([])
+
+  useEffect(() => {
+    fetchSettings().then((s) => {if (s) {setTestimonials(s.testimonials)}});
+  }, []);
 
   return (
     <div className="container">
