@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getRequestContext } from '@cloudflare/next-on-pages';
+import mockKV from '@/public/mock_kv.json';
 
 export const runtime = 'edge';
 
@@ -21,6 +22,11 @@ export async function POST(request: NextRequest) {
 
 export async function GET() {
   try {
+
+    if (process.env.NODE_ENV === 'development') {
+      return NextResponse.json({ settings: mockKV }, { status: 200 });
+    }
+
     const KV = getRequestContext().env.KV;
 
     const settingsString = await KV.get("CONTENT_MAP");

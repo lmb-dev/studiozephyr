@@ -1,0 +1,457 @@
+{
+  "categories": {
+    "Realism": [
+      "Dreamcatcher 드림캐쳐 BEcause悲",
+      "Kpop Idols",
+      "Dreamcatcher  드림캐쳐 BONVOYAGE"
+    ],
+    "Semi-Realism": [
+      "Inspired",
+      "OC"
+    ],
+    "Videogame": [
+      "Mass Effect",
+      "Baldur's Gate 3",
+      "League of Legends"
+    ],
+    "Anime": [
+      "Genshin Impact"
+    ],
+    "Commissioned Art": [
+      "OridanCake Twitch Emotes (2025)",
+      "D&D Commission (2024)",
+      "OridanCake Twitch Subscriber Badges (2025)",
+      "HolyCheeseburger Twitch Emotes (2025)"
+    ],
+    "Tattoo Designs": [
+      "Tattoos"
+    ]
+  },
+  "art": [
+    {
+      "name": "Smokey Moon Cycles",
+      "collection": "Tattoos",
+      "category": "Tattoo Designs",
+      "imageURL": "https://cdn.studiozephyr.art/artwork/mooncycles-1755449700848.jpg"
+    },
+    {
+      "name": "Thieves Guild Protection Rune",
+      "collection": "Tattoos",
+      "category": "Tattoo Designs",
+      "imageURL": "https://cdn.studiozephyr.art/artwork/thievesguild-1755449725441.jpg"
+    },
+    {
+      "name": "Thane Krios (2023)",
+      "collection": "Mass Effect",
+      "category": "Videogame",
+      "imageURL": "https://cdn.studiozephyr.art/artwork/thane-1755450467779.jpg"
+    },
+    {
+      "name": "Liara T'Soni (2023)",
+      "collection": "Mass Effect",
+      "category": "Videogame",
+      "imageURL": "https://cdn.studiozephyr.art/artwork/liara-1755450505999.jpg"
+    },
+    {
+      "name": "Garrus Vakarian (2023)",
+      "collection": "Mass Effect",
+      "category": "Videogame",
+      "imageURL": "https://cdn.studiozephyr.art/artwork/garrus-1755450518921.jpg"
+    },
+    {
+      "name": "Tali'Zorah Vas Normandy (2024)",
+      "collection": "Mass Effect",
+      "category": "Videogame",
+      "imageURL": "https://cdn.studiozephyr.art/artwork/tali-1755450538791.png"
+    },
+    {
+      "name": "Legion (2024)",
+      "collection": "Mass Effect",
+      "category": "Videogame",
+      "imageURL": "https://cdn.studiozephyr.art/artwork/legion-1755450552431.jpg"
+    },
+    {
+      "name": "Shadowheart (2024)",
+      "collection": "Baldur's Gate 3",
+      "category": "Videogame",
+      "imageURL": "https://cdn.studiozephyr.art/artwork/shadowheart-1755450591406.jpg"
+    },
+    {
+      "name": "Coven Ahri (2023)",
+      "collection": "League of Legends",
+      "category": "Videogame",
+      "imageURL": "https://cdn.studiozephyr.art/artwork/ahri-1755450615815.jpeg"
+    },
+    {
+      "name": "Star Guardian Janna (2022)",
+      "collection": "League of Legends",
+      "category": "Videogame",
+      "imageURL": "https://cdn.studiozephyr.art/artwork/janna-1755450637977.jpg"
+    },
+    {
+      "name": "Itzy Yuna (2022)",
+      "collection": "Kpop Idols",
+      "category": "Realism",
+      "imageURL": "https://cdn.studiozephyr.art/artwork/yuna-1755457339583.jpg"
+    },
+    {
+      "name": "Everglow Aisha (2022)",
+      "collection": "Kpop Idols",
+      "category": "Realism",
+      "imageURL": "https://cdn.studiozephyr.art/artwork/aisha-1755457428023.jpg"
+    },
+    {
+      "name": "Siyeon 시연 (2022)",
+      "collection": "Dreamcatcher 드림캐쳐 BEcause悲",
+      "category": "Realism",
+      "imageURL": "https://cdn.studiozephyr.art/artwork/siyeon-1755457488852.jpg"
+    },
+    {
+      "name": "Handong 한동 (2022)",
+      "collection": "Dreamcatcher 드림캐쳐 BEcause悲",
+      "category": "Realism",
+      "imageURL": "https://cdn.studiozephyr.art/artwork/handong-1755457608835.jpg"
+    },
+    {
+      "name": "JiU 지유 (2022)",
+      "collection": "Dreamcatcher 드림캐쳐 BEcause悲",
+      "category": "Realism",
+      "imageURL": "https://cdn.studiozephyr.art/artwork/jiu-1755457663500.jpg"
+    },
+    {
+      "name": "SuA 수아 (2022)",
+      "collection": "Dreamcatcher 드림캐쳐 BEcause悲",
+      "category": "Realism",
+      "imageURL": "https://cdn.studiozephyr.art/artwork/Sua-1755457692073.jpg"
+    },
+    {
+      "name": "Dami 다미 (2022)",
+      "collection": "Dreamcatcher 드림캐쳐 BEcause悲",
+      "category": "Realism",
+      "imageURL": "https://cdn.studiozephyr.art/artwork/Dami-1755457771621.jpg"
+    },
+    {
+      "name": "Yoohyeon 유현 (2022)",
+      "collection": "Dreamcatcher 드림캐쳐 BEcause悲",
+      "category": "Realism",
+      "imageURL": "https://cdn.studiozephyr.art/artwork/Yoohyeon-1755457794569.jpg"
+    },
+    {
+      "name": "Gahyun 가현 (2022)",
+      "collection": "Dreamcatcher 드림캐쳐 BEcause悲",
+      "category": "Realism",
+      "imageURL": "https://cdn.studiozephyr.art/artwork/Gahyun-1755457815651.jpg"
+    },
+    {
+      "name": "The Seer (2023)",
+      "collection": "OC",
+      "category": "Semi-Realism",
+      "imageURL": "https://cdn.studiozephyr.art/artwork/Seer-1755458581455.jpeg"
+    },
+    {
+      "name": "Arlecchino - Genshin Impact (2025)",
+      "collection": "Inspired",
+      "category": "Semi-Realism",
+      "imageURL": "https://cdn.studiozephyr.art/artwork/Arlecchino-1755458679881.jpg"
+    },
+    {
+      "name": "Ithelia - BG3 (2024)",
+      "collection": "Inspired",
+      "category": "Semi-Realism",
+      "imageURL": "https://cdn.studiozephyr.art/artwork/Ithelia-1755458725532.png"
+    },
+    {
+      "name": "Starlit (2023)",
+      "collection": "OC",
+      "category": "Semi-Realism",
+      "imageURL": "https://cdn.studiozephyr.art/artwork/Starlit (2023)-1755458752298.jpg"
+    },
+    {
+      "name": "Ophelia - ME (2023)",
+      "collection": "Inspired",
+      "category": "Semi-Realism",
+      "imageURL": "https://cdn.studiozephyr.art/artwork/Ophelia-1755458807791.jpg"
+    },
+    {
+      "name": "Seraphena of Hectahame - ESO (2023)",
+      "collection": "Inspired",
+      "category": "Semi-Realism",
+      "imageURL": "https://cdn.studiozephyr.art/artwork/Seraphena-1755458881007.jpg"
+    },
+    {
+      "name": "Unbroken (2022)",
+      "collection": "OC",
+      "category": "Semi-Realism",
+      "imageURL": "https://cdn.studiozephyr.art/artwork/Unbroken-1755458909009.jpg"
+    },
+    {
+      "name": "Serana - Skyrim (2022)",
+      "collection": "Inspired",
+      "category": "Semi-Realism",
+      "imageURL": "https://cdn.studiozephyr.art/artwork/Serana-1755458947301.jpg"
+    },
+    {
+      "name": "Lee Gahyun - Dreamcatcher (2024)",
+      "collection": "Inspired",
+      "category": "Semi-Realism",
+      "imageURL": "https://cdn.studiozephyr.art/artwork/Gahyun-1755458987411.jpg"
+    },
+    {
+      "name": "D&D Final Piece",
+      "collection": "D&D Commission (2024)",
+      "category": "Commissioned Art",
+      "imageURL": "https://cdn.studiozephyr.art/artwork/D&DFinal-1755459066639.jpg"
+    },
+    {
+      "name": "The Blade of Daardenrien",
+      "collection": "D&D Commission (2024)",
+      "category": "Commissioned Art",
+      "imageURL": "https://cdn.studiozephyr.art/artwork/Daardenrien-1755459296683.jpg"
+    },
+    {
+      "name": "The Bereaved Healer",
+      "collection": "D&D Commission (2024)",
+      "category": "Commissioned Art",
+      "imageURL": "https://cdn.studiozephyr.art/artwork/Healer-1755459324445.jpg"
+    },
+    {
+      "name": "The Urthgardt Brute",
+      "collection": "D&D Commission (2024)",
+      "category": "Commissioned Art",
+      "imageURL": "https://cdn.studiozephyr.art/artwork/Urthgardt-1755459347356.jpg"
+    },
+    {
+      "name": "The Dungeonmaster",
+      "collection": "D&D Commission (2024)",
+      "category": "Commissioned Art",
+      "imageURL": "https://cdn.studiozephyr.art/artwork/Dungeonmaster-1755459377403.jpg"
+    },
+    {
+      "name": "The Unsettling Owlin",
+      "collection": "D&D Commission (2024)",
+      "category": "Commissioned Art",
+      "imageURL": "https://cdn.studiozephyr.art/artwork/Owlin-1755459397277.jpg"
+    },
+    {
+      "name": "CakeLove",
+      "collection": "OridanCake Twitch Emotes (2025)",
+      "category": "Commissioned Art",
+      "imageURL": "https://cdn.studiozephyr.art/artwork/CakeLove-1755459583014.jpg"
+    },
+    {
+      "name": "CakeWoah",
+      "collection": "OridanCake Twitch Emotes (2025)",
+      "category": "Commissioned Art",
+      "imageURL": "https://cdn.studiozephyr.art/artwork/CakeWoah-1755459604382.jpg"
+    },
+    {
+      "name": "CakeLurk",
+      "collection": "OridanCake Twitch Emotes (2025)",
+      "category": "Commissioned Art",
+      "imageURL": "https://cdn.studiozephyr.art/artwork/CakeLurk-1755459626588.jpg"
+    },
+    {
+      "name": "CakeHello",
+      "collection": "OridanCake Twitch Emotes (2025)",
+      "category": "Commissioned Art",
+      "imageURL": "https://cdn.studiozephyr.art/artwork/CakeHello-1755459645158.jpg"
+    },
+    {
+      "name": "CakeWut",
+      "collection": "OridanCake Twitch Emotes (2025)",
+      "category": "Commissioned Art",
+      "imageURL": "https://cdn.studiozephyr.art/artwork/d6493208-811f-4641-af0f-8e697df21eb5_rw_600-1755459669978.jpg"
+    },
+    {
+      "name": "CakeChaos",
+      "collection": "OridanCake Twitch Emotes (2025)",
+      "category": "Commissioned Art",
+      "imageURL": "https://cdn.studiozephyr.art/artwork/CakeChaos-1755459692683.jpg"
+    },
+    {
+      "name": "CakeCoffee",
+      "collection": "OridanCake Twitch Emotes (2025)",
+      "category": "Commissioned Art",
+      "imageURL": "https://cdn.studiozephyr.art/artwork/CakeCoffee-1755459724369.jpg"
+    },
+    {
+      "name": "CakeAngy",
+      "collection": "OridanCake Twitch Emotes (2025)",
+      "category": "Commissioned Art",
+      "imageURL": "https://cdn.studiozephyr.art/artwork/CakeAngy-1755459750176.jpg"
+    },
+    {
+      "name": "CakePopcorn",
+      "collection": "OridanCake Twitch Emotes (2025)",
+      "category": "Commissioned Art",
+      "imageURL": "https://cdn.studiozephyr.art/artwork/CakePopcorn-1755459776906.jpg"
+    },
+    {
+      "name": "Shenhe (2024)",
+      "collection": "Genshin Impact",
+      "category": "Anime",
+      "imageURL": "https://cdn.studiozephyr.art/artwork/Shenhe-1755460311531.jpg"
+    },
+    {
+      "name": "Kujou Sara (2023)",
+      "collection": "Genshin Impact",
+      "category": "Anime",
+      "imageURL": "https://cdn.studiozephyr.art/artwork/Kujou-1755460351620.jpg"
+    },
+    {
+      "name": "Ganyu (2025)",
+      "collection": "Genshin Impact",
+      "category": "Anime",
+      "imageURL": "https://cdn.studiozephyr.art/artwork/Ganyu-1755460373224.jpg"
+    },
+    {
+      "name": "Ningguang (2022)",
+      "collection": "Genshin Impact",
+      "category": "Anime",
+      "imageURL": "https://cdn.studiozephyr.art/artwork/Ningguang-1755460397236.jpg"
+    },
+    {
+      "name": "Eula (2022)",
+      "collection": "Genshin Impact",
+      "category": "Anime",
+      "imageURL": "https://cdn.studiozephyr.art/artwork/Eula-1755460438509.jpg"
+    },
+    {
+      "name": "Layla (2023)",
+      "collection": "Genshin Impact",
+      "category": "Anime",
+      "imageURL": "https://cdn.studiozephyr.art/artwork/Layla-1755460456170.jpg"
+    },
+    {
+      "name": "Eula AU (2023)",
+      "collection": "Genshin Impact",
+      "category": "Anime",
+      "imageURL": "https://cdn.studiozephyr.art/artwork/EulaAU-1755460475483.jpg"
+    },
+    {
+      "name": "Sangonomiya Kokomi (2022)",
+      "collection": "Genshin Impact",
+      "category": "Anime",
+      "imageURL": "https://cdn.studiozephyr.art/artwork/Kokomi-1755460504177.jpg"
+    },
+    {
+      "name": "Yae Miko (2022)",
+      "collection": "Genshin Impact",
+      "category": "Anime",
+      "imageURL": "https://cdn.studiozephyr.art/artwork/Yae-1755460525913.jpg"
+    },
+    {
+      "name": "Beidou (2022)",
+      "collection": "Genshin Impact",
+      "category": "Anime",
+      "imageURL": "https://cdn.studiozephyr.art/artwork/Beidou-1755460543787.jpg"
+    },
+    {
+      "name": "JiU 지유 (2025)",
+      "collection": "Dreamcatcher  드림캐쳐 BONVOYAGE",
+      "category": "Realism",
+      "imageURL": "https://cdn.studiozephyr.art/artwork/IMG_1361-1756674874456.JPG"
+    },
+    {
+      "name": "Handong 한동 (2025)",
+      "collection": "Dreamcatcher  드림캐쳐 BONVOYAGE",
+      "category": "Realism",
+      "imageURL": "https://cdn.studiozephyr.art/artwork/IMG_1359-1756674934834.JPG"
+    },
+    {
+      "name": "Sprinkles",
+      "collection": "OridanCake Twitch Subscriber Badges",
+      "category": "Commissioned Art",
+      "imageURL": "https://cdn.studiozephyr.art/artwork/IMG_1319-1756675087156.JPG"
+    },
+    {
+      "name": "Blueberry",
+      "collection": "OridanCake Twitch Subscriber Badges (2025)",
+      "category": "Commissioned Art",
+      "imageURL": "https://cdn.studiozephyr.art/artwork/IMG_1320-1756675130265.JPG"
+    },
+    {
+      "name": "Lemon Drizzle",
+      "collection": "OridanCake Twitch Subscriber Badges (2025)",
+      "category": "Commissioned Art",
+      "imageURL": "https://cdn.studiozephyr.art/artwork/IMG_1321-1756675152164.JPG"
+    },
+    {
+      "name": "Toffee Apple",
+      "collection": "OridanCake Twitch Subscriber Badges (2025)",
+      "category": "Commissioned Art",
+      "imageURL": "https://cdn.studiozephyr.art/artwork/IMG_1322-1756675167785.JPG"
+    },
+    {
+      "name": "Peach",
+      "collection": "OridanCake Twitch Subscriber Badges (2025)",
+      "category": "Commissioned Art",
+      "imageURL": "https://cdn.studiozephyr.art/artwork/IMG_1323-1756675188981.JPG"
+    },
+    {
+      "name": "Raspberry",
+      "collection": "OridanCake Twitch Subscriber Badges (2025)",
+      "category": "Commissioned Art",
+      "imageURL": "https://cdn.studiozephyr.art/artwork/IMG_1324-1756675205325.JPG"
+    },
+    {
+      "name": "Strawberry",
+      "collection": "OridanCake Twitch Subscriber Badges (2025)",
+      "category": "Commissioned Art",
+      "imageURL": "https://cdn.studiozephyr.art/artwork/IMG_1325-1756675222413.JPG"
+    },
+    {
+      "name": "Fuck it...Powerwash Raccoon",
+      "collection": "HolyCheeseburger Twitch Emotes (2025)",
+      "category": "Commissioned Art",
+      "imageURL": "https://cdn.studiozephyr.art/artwork/IMG_1332-1756675340852.JPG"
+    },
+    {
+      "name": "Beaver in a Swinsuit",
+      "collection": "HolyCheeseburger Twitch Emotes (2025)",
+      "category": "Commissioned Art",
+      "imageURL": "https://cdn.studiozephyr.art/artwork/IMG_1333-1756675375035.JPG"
+    },
+    {
+      "name": "Monke Overcooked",
+      "collection": "HolyCheeseburger Twitch Emotes (2025)",
+      "category": "Commissioned Art",
+      "imageURL": "https://cdn.studiozephyr.art/artwork/IMG_1334-1756675398425.JPG"
+    },
+    {
+      "name": "HUHH BBC",
+      "collection": "HolyCheeseburger Twitch Emotes (2025)",
+      "category": "Commissioned Art",
+      "imageURL": "https://cdn.studiozephyr.art/artwork/IMG_1335-1756675424529.JPG"
+    },
+    {
+      "name": "Khajit Supremacy",
+      "collection": "HolyCheeseburger Twitch Emotes (2025)",
+      "category": "Commissioned Art",
+      "imageURL": "https://cdn.studiozephyr.art/artwork/IMG_1336-1756675444624.JPG"
+    },
+    {
+      "name": "HolyCheeseburger Sub Badge",
+      "collection": "HolyCheeseburger Twitch Emotes (2025)",
+      "category": "Commissioned Art",
+      "imageURL": "https://cdn.studiozephyr.art/artwork/IMG_1337-1756675464263.JPG"
+    }
+  ],
+  "testimonials": [
+    {
+      "name": "Lou",
+      "text": "I asked for some Mass Effect character art and she absolutely nailed it. The pieces came out better than I imagined, with so much personality and detail. Super easy to work with too!",
+      "project": "Mass Effect Pieces"
+    },
+    {
+      "name": "@OridanCake",
+      "text": "My art heart is full thanks to this creative mastermind! She listens, she notes and helped my vision come to life. Wholly recommend.",
+      "project": "Graphic Designer for discord.gg/EnterTheDominion & Twitch Emotes"
+    },
+    {
+      "name": "@HolyCheeseburger",
+      "text": "I commissioned Twitch emotes from her and I've been really pleased with them. The communication was very smooth and she delivered the final product really quickly as well. Can highly recommend.",
+      "project": "Twitch Emotes"
+    }
+  ]
+}
